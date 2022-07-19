@@ -1,0 +1,42 @@
+  {{> indexheader }}
+
+  <main id="main">
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h3>Get in touch on <span>.Net, .Net Core, AspNetCore and Azure</span></h3>
+          <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> -->
+        </div>
+
+        <div class="row">
+            {{#each collections.articles }}
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box">
+                      <h4><a href="/{{ path }}">{{ title }}</a></h4>
+                      <p>{{ blurb }}</p>
+                    </div>
+                </div>
+
+            {{/each}}
+        </div>
+
+      </div>
+      <ul>
+      {{#each pagination.files}}
+        <li>
+          <a href="/{{this.full_slug}}">{{this.content.title}}</a> \ {{this.content.author.name}} <img src="{{this.content.author.content.image }}"> \ {{ moment content.date 'MMM DD, YYYY'}} \\ 
+          {{#each (arrayfromstring content.tags)}}
+            <a href="/blog/topics/{{slug this}}" >{{this}}.</a>
+          {{/each}}
+        </li>
+      {{/each}}
+      </ul>
+    </section><!-- End Services Section -->
+
+  </main><!-- End #main -->
+
+  {{> indexfooter }}

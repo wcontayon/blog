@@ -1,0 +1,258 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ 
+   <title> Benchmark your C# Code with Benchmark .NET -  Adom</title>
+   <meta content="" name="description">
+   <meta content="" name="keywords">
+   <meta name="description" content=" Measure your dotnet code performance " />
+ 
+   <!-- Favicons -->
+   <link href="../favicon/favicon.ico" rel="icon">
+   <link href="../favicon/apple-touch-icon.png" rel="apple-touch-icon">
+ 
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
+   <!-- Vendor CSS Files -->
+   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+   <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark.css">
+ 
+   <!-- Template Main CSS File -->
+   <link href="../assets/css/style.css" rel="stylesheet">
+ 
+   <!-- =======================================================
+   * Template Name: BizLand - v3.7.0
+   * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+   * Author: BootstrapMade.com
+   * License: https://bootstrapmade.com/license/
+   ======================================================== -->
+ </head>
+ 
+ <body>
+ 
+     <!-- ======= Top Bar ======= -->
+   <section id="topbar" class="d-flex align-items-center">
+     <div class="container d-flex justify-content-center justify-content-md-between">
+       <div class="contact-info d-flex align-items-center">
+         <!-- <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"> -->
+         <strong><span style="font-size:17px;">Adom</span></strong>&nbsp;&nbsp; Blog about Microsoft technologies (.NET, .NET Core, ASP.NET Core, Azure, etc.)</a></i>
+         <!-- <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i> -->
+       </div>
+       <div class="social-links d-none d-md-flex align-items-center">
+         <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bi bi-github"></i></a>
+         <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+       </div>
+     </div>
+   </section>
+ 
+   <!-- ======= Header ======= -->
+   <header id="header" class="d-flex align-items-center">
+     <div class="container d-flex align-items-center justify-content-between">
+ 
+       <!-- <h1 class="logo"><a href="index.html">Adom<span>.</span></a></h1> -->
+       <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="/" class="logo"><img src="../assets/img/Adom.png" alt=""></a>
+ 
+       <nav id="navbar" class="navbar">
+         <ul>
+           <li><a class="nav-link" href="/">Home</a></li>
+           <li><a class="nav-link" href="/about">About</a></li>
+           <li><a class="nav-link" href="/contact">Contact</a></li>
+         </ul>
+         <i class="bi bi-list mobile-nav-toggle"></i>
+       </nav><!-- .navbar -->
+ 
+     </div>
+   </header><!-- End Header -->
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Benchmark your C# Code with Benchmark .NET</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Benchmark your C# Code with Benchmark .NET</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-9">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="portfolio-info" style="font-size: 12px; padding-top: 10px; padding-bottom: 10px;">
+                <strong>Published</strong>: 20 oct. &#x27;21 / by <strong>wcontayon</strong><br />
+                <strong>articles,dotnet,general</strong>
+            </div>
+            <hr />
+            <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
+                <h2 id="benchmark-your-c-code-with-benchmark-net">Benchmark your C# Code with Benchmark .NET</h2>
+<p>In this article, we are going to cover how to make your C# code and AspNetCore projects effichient using a benchmark framework BenchmarkDotNet. We’ll set up a benchmarking test in a simple project to compare hashing alogorithms and GRPC and REST.</p>
+<h3 id="what-is-benchmark">What is Benchmark</h3>
+<p>A benchmark is a set of measurements that concerns the performance of a code, a function, an algorithm or an application. It’s important to benchmark a code, it allows us to understang the performance metrics of the code you write. Consider it as the a good approach to have these metrics at your side, when you’re optimizing or refactoring code.</p>
+<h3 id="what-is-benchmarkdotnet">What is BenchmarkDotNet</h3>
+<p><strong>BenchmarkDotNet</strong> is a hight performance and lightweight .Net library that provides beanchmarking feature to transform and track method/function and provide insights into the performance data captured. It’s an open source project, you read the source on the official github repository. It is easy to write BenchmarkDotNet benchmarks and the results of the benchmarking process are user friendly as well.</p>
+<p>We can use BenchmarkDotNet to benchmark both .Net Framework and .Net Core application.
+Create a console application project in Visual Studio 2019</p>
+<p>Let’s create a .NET Core console application project in Visual Studio. if you do not have Visual Studio, you can download from Microsoft Visual Studio website.
+Follow the steps below to create a new .NET Core console application project in Visual Studio.</p>
+<ul>
+<li>Launch the Visual Studio IDE.</li>
+<li>Click on “Create new project.”</li>
+<li>In the “Create new project&quot; window, select “Console App (.NET Core)” from the list of templates displayed.</li>
+<li>Click Next.</li>
+<li>In the “Configure your new project” window shown next, specify the name and location for the new project.</li>
+<li>Click Create.</li>
+</ul>
+<p>This will create a new .NET Core console application project in Visual Studio 2019. With a class named Program which have the following code</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+    {
+        Console.WriteLine(<span class="hljs-string">"Hello World!"</span>);
+    }
+}</code></pre>
+
+<h3 id="integrate-benchmarkdotnet-in-your-project">Integrate BenchmarkDotNet in your project</h3>
+<p>To add BenchmarkDotNet to your project, you can do it from the Nuget Package Manager winfows of Visual Studio for the solution you just created.</p>
+<img src="..\assets\articles\img\benchmark1-1536x264.png" width="100%" height="100" />
+
+<p>Or you can use the following command at the NuGet Package Manager Console: <strong><code>Install-Package BenchmarkDotNet</code></strong></p>
+<p>Edit the code of the Program.cs with the following lines :</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">HashingBenchmark</span>
+    {
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> N = <span class="hljs-number">10</span>;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">byte</span>[] data;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">string</span> sData;
+
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> SHA256 sha256 = SHA256.Create();
+
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> MD5 md5 = MD5.Create();
+
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> PasswordHasher pwdHasher = <span class="hljs-keyword">new</span> PasswordHasher();
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashingBenchmark</span>(<span class="hljs-params"></span>)</span>
+        {
+            data = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[N];
+            <span class="hljs-keyword">new</span> Random(<span class="hljs-number">42</span>).NextBytes(data);
+            sData = UTF8Encoding.UTF8.GetString(data);
+        }
+
+        [<span class="hljs-meta">Benchmark</span>]
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">byte</span>[] <span class="hljs-title">Sha256</span>(<span class="hljs-params"></span>)</span> =&gt; sha256.ComputeHash(data);
+
+        [<span class="hljs-meta">Benchmark</span>]
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">byte</span>[] <span class="hljs-title">Md5</span>(<span class="hljs-params"></span>)</span> =&gt; md5.ComputeHash(data);
+
+        [<span class="hljs-meta">Benchmark</span>]
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> <span class="hljs-title">PwdHasher</span>(<span class="hljs-params"></span>)</span> =&gt; pwdHasher.HashPassword(<span class="hljs-string">"New Password clear text"</span>);
+
+        [<span class="hljs-meta">Benchmark</span>]
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> <span class="hljs-title">BcryptHash</span>(<span class="hljs-params"></span>)</span>
+        {
+            <span class="hljs-keyword">string</span> mySalt = BCrypt.Net.BCrypt.GenerateSalt();
+            <span class="hljs-keyword">string</span> myHash = BCrypt.Net.BCrypt.HashPassword(<span class="hljs-string">"New Password clear text"</span>, mySalt);
+
+            <span class="hljs-keyword">return</span> myHash;
+        }
+    }
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)</span>
+        {
+            <span class="hljs-keyword">var</span> summary = BenchmarkRunner.Run&lt;HashingBenchmark&gt;();
+            Console.ReadLine();
+        }
+    }</code></pre>
+
+<p>Let’s explain the code.</p>
+<p>We can notice the BenchmarkAttribute on methods <strong><code>Sha256()</code></strong> <strong><code>Md5()</code></strong>, <strong><code>PwdHaser()</code></strong> and <strong><code>BcryptHash()</code></strong> which is applied only on public method that need to be benchmarked and  the instruction <strong><code>BenchmarkRunner.Run&lt;HashingBenchmark&gt;();</code></strong> executes the benchmark and logs the result to the console.</p>
+<p>The summary of execution looks like
+<img src="..%5Cassets%5Carticles%5Cimg%5Cbenchmark-result.png" alt="result-benchmark"></p>
+<p>For each benchmarked method you’ll have a row with the result data. Here I have a 4 lines for my benchmark of <strong><code>Sha256()</code></strong> <strong><code>Md5()</code></strong>, <strong><code>PwdHaser()</code></strong> and <strong><code>BcryptHash()</code></strong>. You can see their mean execution time measured in nanoseconds, and other statistical data like the error and standard deviation of the timing data across the iterations. From these results, we can notice that the <strong><code>Sha256()</code></strong> is much faster than others.</p>
+<p>Imagine, you want to analyse the memory used during executing your methods. In order to benchmark used memory, we add the <strong><code>MemoryDiagnoser()</code></strong> attribute on the <strong><code>HashingBenchmark</code></strong> class. Once the program runs we can notice extra columns have been added to the result.</p>
+<p>The first three columns related to GC collections. They are scaled to show the number per 1,000 operations. In this case, the methods would have had to be called very often to trigger a Gen 0 collection and is not likely to cause Gen 1 or Gen 2 collections (except the <strong>BcryptHash()</strong> which does not trigger any Gen collection) The final column is very helpful and it shows the allocated memory per operation.</p>
+<h3 id="summary">Summary</h3>
+<p>Before start any code optimisation, it’s important to define benchmark baseline. In that way you can see whether the improved code is faster or not, if its allocates less than the previous code, etc. Measurement of the improvements can help to guide further optimisations and also provide crucial data that can justify the time spent making code improvements. Benchmarking with a tool like Benchmark.NET is pretty straightforward for your .Net project.</p>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="portfolio-info">
+              
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+        <ul>
+  </ul>
+    </section><!-- End Portfolio Details Section -->
+
+
+  </main><!-- End #main -->
+
+   <!-- ======= Footer ======= -->
+   <footer id="footer">
+  
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Adom</span></strong>. All Rights Reserved. Built with <a href="">metalsmith</a>
+        </div>
+        <div class="credits" style="font-size:16px;">
+          <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+  
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/purecounter/purecounter.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+  
+  </body>
+  </html>
