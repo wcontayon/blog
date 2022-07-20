@@ -3,12 +3,8 @@ title: 'Benchmark your C# Code with Benchmark .NET'
 date: 2021-10-20
 author: 'wcontayon'
 blurb: Measure your dotnet code performance
-collection:
-- general
-- dotnet
+tags: general, dotnet
 ---
-
-## Benchmark your C# Code with Benchmark .NET
 
 In this article, we are going to cover how to make your C# code and AspNetCore projects effichient using a benchmark framework BenchmarkDotNet. We’ll set up a benchmarking test in a simple project to compare hashing alogorithms and GRPC and REST.
 

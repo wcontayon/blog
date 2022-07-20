@@ -12,7 +12,7 @@
         </div>
 
         <div class="row">
-            {{#each collections.articles }}
+            {{#each articles }}
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box">
@@ -25,15 +25,12 @@
         </div>
 
       </div>
-      {{#if pagination.previous }}<a href="/{{ pagination.previous.path }}">Newer post</a>{{/if}}
-      {{#if pagination.next }}<a href="/{{ pagination.next.path }}">Older post</a>{{/if}}
+      <a href="/{{ pagination.previous.path }}">Newer post</a>
+      <a href="/{{ pagination.next.path }}">Older post</a>
       <ul>
       {{#each pagination.files}}
         <li>
-          <a href="/{{this.full_slug}}">{{this.content.title}}</a> \ {{this.content.author.name}} <img src="{{this.content.author.content.image }}"> \ {{ moment content.date 'MMM DD, YYYY'}} \\ 
-          {{#each (arrayfromstring content.tags)}}
-            <a href="/blog/topics/{{slug this}}" >{{this}}.</a>
-          {{/each}}
+          <a href="/{{this.full_slug}}">{{this.content.title}}</a> \ {{this.content.author.name}} <img src="{{this.content.author.content.image }}"> \ {{ moment content.date 'MMM DD, YYYY'}}
         </li>
       {{/each}}
       </ul>

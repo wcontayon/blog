@@ -1,0 +1,182 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ 
+   <title> Rate Limiting annoucement in .Net7 preview -  Adom</title>
+   <meta content="" name="description">
+   <meta content="" name="keywords">
+   <meta name="description" content=" Rate Limiting annoucement in .Net7 preview " />
+ 
+   <!-- Favicons -->
+   <link href="../favicon/favicon.ico" rel="icon">
+   <link href="../favicon/apple-touch-icon.png" rel="apple-touch-icon">
+ 
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
+   <!-- Vendor CSS Files -->
+   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+   <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark.css">
+ 
+   <!-- Template Main CSS File -->
+   <link href="../assets/css/style.css" rel="stylesheet">
+ 
+   <!-- =======================================================
+   * Template Name: BizLand - v3.7.0
+   * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+   * Author: BootstrapMade.com
+   * License: https://bootstrapmade.com/license/
+   ======================================================== -->
+ </head>
+ 
+ <body>
+ 
+     <!-- ======= Top Bar ======= -->
+   <section id="topbar" class="d-flex align-items-center">
+     <div class="container d-flex justify-content-center justify-content-md-between">
+       <div class="contact-info d-flex align-items-center">
+         <!-- <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"> -->
+         <strong><span style="font-size:17px;">Adom</span></strong>&nbsp;&nbsp; Blog about Microsoft technologies (.NET, .NET Core, ASP.NET Core, Azure, etc.)</a></i>
+         <!-- <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i> -->
+       </div>
+       <div class="social-links d-none d-md-flex align-items-center">
+         <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bi bi-github"></i></a>
+         <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+       </div>
+     </div>
+   </section>
+ 
+   <!-- ======= Header ======= -->
+   <header id="header" class="d-flex align-items-center">
+     <div class="container d-flex align-items-center justify-content-between">
+ 
+       <!-- <h1 class="logo"><a href="index.html">Adom<span>.</span></a></h1> -->
+       <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="/" class="logo"><img src="../assets/img/Adom.png" alt=""></a>
+ 
+       <nav id="navbar" class="navbar">
+         <ul>
+           <li><a class="nav-link" href="/">Home</a></li>
+           <li><a class="nav-link" href="/about">About</a></li>
+           <li><a class="nav-link" href="/contact">Contact</a></li>
+         </ul>
+         <i class="bi bi-list mobile-nav-toggle"></i>
+       </nav><!-- .navbar -->
+ 
+     </div>
+   </header><!-- End Header -->
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 style="font-size: 2rem; font-weight:bold;">Rate Limiting annoucement in .Net7 preview</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Rate Limiting annoucement in .Net7 preview</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-9">
+            <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
+                <div class="portfolio-info" style="font-size: 12px; padding-top: 10px; padding-bottom: 10px;">
+                    <strong>Published</strong>: 16/juil./2022 / by <strong>wcontayon</strong><br />
+                    <strong>general | </strong>
+                    <strong>dotnet | </strong>
+                    <strong>net7preview | </strong>
+                    <strong>aspnetcore | </strong>
+                </div>
+                <hr />
+                
+                <p>.Net team has <a href="https://devblogs.microsoft.com/dotnet/announcing-rate-limiting-for-dotnet/">announced</a> a built-in support of Rate Limiting in the next release of .net7.</p>
+<h3 id="what-is-rate-limiting-">What is rate limiting ?</h3>
+<p><strong>Rate limiting</strong> is a concept of limiting access to resource. For example, we have a resource (database, or file) and we know that our application accesses can handle 20 requests per mintues safely. However, we are not confident about if it can handle more than that. For this reason, we can put a rate limiter in our application that allows 20 requests per every minute and rejects any other more requests before they can access to the resource.
+Rate limiting is a excellent way to protect resource from failure due to multiple request more than it can handle.</p>
+<p>There are multiple different rate limiting algorithms. The .net preview 7 will support 4 of them.</p>
+<ul>
+<li>Concurrency limit</li>
+<li>Token bucket limit</li>
+<li>Fixed window limit</li>
+<li>Sliding window limit</li>
+</ul>
+<p>I’ll provide more technicals details about using Rate Limiting APIs with the built-in <a href="https://github.com/dotnet/runtime/blob/96cac6b6abceed31332af62db98e490d9df109bb/src/libraries/System.Threading.RateLimiting/src/System/Threading/RateLimiting/RateLimiter.cs#L11"><strong>abstract class RateLimiter</strong></a> and how to use the different rate limiting algorithms in the next posts.</p>
+<p>To find out more about RateLimiter and the rate liminting algorithm you can read the official <a href="https://devblogs.microsoft.com/dotnet/announcing-rate-limiting-for-dotnet/">annoucement</a> on the Microsoft Blog.</p>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="portfolio-info">
+                  <a href="/"></a>
+                  <a href="/"></a>
+                  <a href="/"></a>
+                  <a href="/"></a>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+        <ul>
+  </ul>
+    </section><!-- End Portfolio Details Section -->
+    <nav class="pagination">
+          <a href="custom-implementation-iresult-minimal-api">&lt; Prev</a>
+  
+    </nav>
+
+  </main><!-- End #main -->
+
+   <!-- ======= Footer ======= -->
+   <footer id="footer">
+  
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Adom</span></strong>. All Rights Reserved. Built with <a href="">metalsmith</a>
+        </div>
+        <div class="credits" style="font-size:16px;">
+          <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+  
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/purecounter/purecounter.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+  
+  </body>
+  </html>

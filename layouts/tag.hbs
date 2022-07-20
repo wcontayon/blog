@@ -1,0 +1,77 @@
+ {{> header }}
+
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 style="font-size: 2rem; font-weight:bold;">{{ title }}</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>{{ title }}</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-9">
+            {{#if img}}
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="{{ img }}" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            {{/if}}
+            <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
+                <ul>{{#each pagination.files}}
+                    <li><small>{{moment date lang="fr" format="DD/MM/YYYY"}}</small> {{title}}</li>
+                {{/each}}
+                </ul>
+                {{#if pagination.previous}}<a href="{{pagination.previous.path}}">Previous</a>{{/if}}
+                {{#if pagination.next}}<a href="{{pagination.next.path}}">Next</a>{{/if}}
+              
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="portfolio-info">
+              
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+        
+    </section><!-- End Portfolio Details Section -->
+    <nav class="pagination">
+      {{#if this.pagination.next}}
+          <a href="{{this.pagination.next.path}}">&lt; Prev</a>
+      {{/if}}
+  
+      {{#if this.pagination.prev}}
+          <a href="{{this.pagination.prev.path}}">Next &gt;</a>
+      {{/if}}
+    </nav>
+    {{#if this.pagination}}
+        
+    {{/if}}
+
+  </main><!-- End #main -->
+
+  {{> footer }}

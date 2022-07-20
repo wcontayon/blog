@@ -4,12 +4,8 @@ date: 2021-10-12
 layout: article.hbs
 blurb: DateOnly and TimeOnly with .NET6 Preview 4
 author: 'wcontayon'
-collection:
-- general
-- dotnet
+tags: general, dotnet
 ---
-
-## DateOnly and TimeOnly with .NET6 Preview 4
 
 The Last .NET preview (.NET 6 preview 4) has introduced two type in the core library DateOnly and TimeOnly.
 Thes new types allow us to represent the date or time portion of a DateTime. They are structs (value types) and can be used independently. We can find these type in System namespace.
@@ -60,7 +56,7 @@ The purpose of **`TimeOnly`** struct is to represent a time that is independent 
 The **`TimeOnly`** type has several constructor overloads. The more common ones that I expect most developers will use allow us to create a date accepting either the hour and minute for the time, the hour, minute and second, or the hour, minute, second and millisecond.
 
 ```csharp
-var timeValue = new TimeOnly(10, 15); // 10h30min.
+var timeValue = new TimeOnly(10, 30); // 10h30min.
 ```
 
 The code snippet creates an 24-hour clock format of time 10h30min (10h30 A.M).
