@@ -9,10 +9,9 @@ const permalinks = require('metalsmith-permalinks');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const assets = require('metalsmith-assets');
-const paginate  = require('metalsmith-paginate');
+const pagination  = require('metalsmith-pagination');
 
 handlebars.registerHelper('moment', require('helper-moment'));
-
 handlebars.registerHelper('limit', function(collection, limit, start) {
   var out   = [],
       i, c;
@@ -29,6 +28,12 @@ handlebars.registerHelper('limit', function(collection, limit, start) {
   return out;
 });
 
+var logPlugin = function(files, metalsmith, done) {
+    console.log(files);
+    done();
+};
+
+
 metalsmith(__dirname)
   .metadata({
     site: {
@@ -37,7 +42,7 @@ metalsmith(__dirname)
     }
   })
   .source('./src')
-  .destination('./public')
+  .destination('./docs')
   .use(collections({
     articles:{
       metadata:{
@@ -48,8 +53,17 @@ metalsmith(__dirname)
       reverse: true
     }
   }))
-  .use(paginate({
-    perPage: 10,
+  .use(pagination({
+    'collections.articles': {
+      perPage: 8,
+      template: 'index.hbs',
+      layout:'index.hbs',
+      first: 'index.html',
+      path: 'page/:num/index.html',
+      pageMetadata: {
+        title: 'Archive'
+      }
+    }
   }))
   .use(discoverPartials())
   .use(metallic())
@@ -79,6 +93,7 @@ metalsmith(__dirname)
         "layouts/**/*": "**/*",
       }
     }))
+  .use(logPlugin)
   .build(function (err) {
     if (err) {
       console.log(err);

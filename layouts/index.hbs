@@ -25,6 +25,8 @@
         </div>
 
       </div>
+      {{#if pagination.previous }}<a href="/{{ pagination.previous.path }}">Newer post</a>{{/if}}
+      {{#if pagination.next }}<a href="/{{ pagination.next.path }}">Older post</a>{{/if}}
       <ul>
       {{#each pagination.files}}
         <li>
