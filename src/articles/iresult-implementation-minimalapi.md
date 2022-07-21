@@ -1,6 +1,7 @@
 ---
 title: 'Custom implementation IResult – Minimal API'
 date: 2022-06-11
+year: 2022
 author: 'wcontayon'
 blurb: 'Custom implementation IResult – Minimal API'
 tags: general, dotnet, aspnetcore

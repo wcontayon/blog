@@ -1,6 +1,7 @@
 ---
 title: 'Benchmark your C# Code with Benchmark .NET'
 date: 2021-10-20
+year: 2021
 author: 'wcontayon'
 blurb: Measure your dotnet code performance
 tags: general, dotnet
@@ -104,7 +105,7 @@ Let’s explain the code.
 
 We can notice the BenchmarkAttribute on methods **`Sha256()`** **`Md5()`**, **`PwdHaser()`** and **`BcryptHash()`** which is applied only on public method that need to be benchmarked and  the instruction **`BenchmarkRunner.Run<HashingBenchmark>();`** executes the benchmark and logs the result to the console.
 
-The summary of execution looks like
+The summary of execution looks like <br />
 ![result-benchmark](..\assets\articles\img\benchmark-result.png)
 
 For each benchmarked method you’ll have a row with the result data. Here I have a 4 lines for my benchmark of **`Sha256()`** **`Md5()`**, **`PwdHaser()`** and **`BcryptHash()`**. You can see their mean execution time measured in nanoseconds, and other statistical data like the error and standard deviation of the timing data across the iterations. From these results, we can notice that the **`Sha256()`** is much faster than others.

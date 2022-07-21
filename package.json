@@ -6,6 +6,7 @@
     "author": "Comlan William CONTAYON",
     "dependencies": {
         "handlebars": "^4.7.7",
+        "handlebars-group-by": "^1.0.1",
         "handlebars-helper-moment": "^0.2.0",
         "helper-moment": "^0.2.0",
         "jstransformer-handlebars": "^1.2.0",

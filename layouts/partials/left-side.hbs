@@ -1,0 +1,36 @@
+
+<div class="member" style="background-color:#f6f9fe; border:1px solid #9db7e3; box-shadow: 0px 0px 0px;">
+    <div class="member-img">
+     
+    </div>
+    <div class="member-info">
+        <h3>Comlan William CONTAYON</h3> 
+        <span>wcontayon</span>
+
+        <br />
+
+        <strong>Senior Software Engineer</strong><br />
+        Microsoft technology enthusiast<br />
+
+        <div class="social-links mt-3"> 
+            <a href="https://github.com/wcontayon/Adom.Framework" class="followme-box"><i class="bx bxl-github"></i></a> 
+            <a href="https://www.linkedin.com/in/wcontayon/" class="followme-box"><i class="bx bxl-linkedin"></i></a>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="member-info">
+        <h5>Recents Posts</h5>
+        {{#each (limit collections.articles 2 0)}}
+           <a class="question" href="/{{path}}" style="text-decoration:underline;">{{title}}</a><br />
+        {{/each}}
+    </div>
+
+    <hr />
+
+    <div class="member-info">
+        <h5>Related Blogs</h5>
+        <a class="question" href="https://devblogs.microsoft.com" style="text-decoration:underline;">Dev Microsoft Blog</a><br />
+    </div>
+</div>

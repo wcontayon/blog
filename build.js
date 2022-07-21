@@ -4,6 +4,7 @@ const discoverPartials = require('metalsmith-discover-partials');
 const markdown = require('metalsmith-markdown');
 const layouts = require('metalsmith-layouts');
 const handlebars = require('handlebars');
+const groupBy = require('handlebars-group-by');
 const collections = require('metalsmith-collections');
 const yearly_pagination  = require('metalsmith-yearly-pagination');
 const permalinks = require('metalsmith-permalinks');
@@ -15,6 +16,7 @@ const tags = require('metalsmith-tags');
 const excerpts = require('metalsmith-excerpts');
 
 handlebars.registerHelper('moment', require('helper-moment'));
+handlebars.registerHelper(groupBy(handlebars));
 handlebars.registerHelper('limit', function(collection, limit, start) {
   var out   = [],
       i, c;
@@ -116,16 +118,16 @@ metalsmith(__dirname)
     source: './layouts/assets',
     destination: './assets'
   }))
-  .use(serve({
-    port: 8081,
-    verbose: true
-  }))
-  .use(watch({
-      paths: {
-        "${source}/**/*": true,
-        "layouts/**/*": "**/*",
-      }
-    }))
+  // .use(serve({
+  //   port: 8081,
+  //   verbose: true
+  // }))
+  // .use(watch({
+  //     paths: {
+  //       "${source}/**/*": true,
+  //       "layouts/**/*": "**/*",
+  //     }
+  //   }))
   .use(logPlugin)
   .build(function (err) {
     if (err) {

@@ -25,27 +25,23 @@
 
           <div class="col-lg-9">
             <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
-                <div class="portfolio-info" style="font-size: 16px; padding-top: 10px; padding-bottom: 10px;">
-                    {{collections.articles.length}}
+                <div class="" style="font-size: 16px; padding-top: 10px; padding-bottom: 10px;">
+                    <h4>{{collections.articles.length}} posts</h4>
                 </div>
                 <hr />
-                
-                <ul>
-                    {{#each collections.articles.years }}
-                    <li><h4>{{ year }}</h4>
-                    <ul>
-                        {{#each posts}}
-                        <li>{{ title }}</li>
-                        {{/each}}
-                    </ul>
-                    </li>
+                {{#group collections.articles by="year"}}
+                    <h4><span>{{ value }}</span></h4>
+                    {{#each items}}
+                        <a class="question" href="/{{path}}" style="text-decoration:underline;">{{title}}</a><br />
                     {{/each}}
-                </ul>
+                    <hr />
+                {{/group}}
             </div>
 
           </div>
 
-          <div class="col-lg-3">
+          <div class="col-lg-3 team" style="padding-top:0px;">
+            {{> left-side }} 
             <div class="portfolio-info">
               {{#each category}}
                 {{#each @key}}

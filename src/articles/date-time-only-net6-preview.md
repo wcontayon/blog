@@ -1,6 +1,7 @@
 ---
 title: "DateOnly and TimeOnly with .NET6 Preview 4"
 date: 2021-10-12
+year: 2021
 layout: article.hbs
 blurb: DateOnly and TimeOnly with .NET6 Preview 4
 author: 'wcontayon'
