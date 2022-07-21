@@ -1,5 +1,6 @@
 ---
 title: about me
+layout: page.hbs
 ---
 
 ## Hi, I'm Comlan William CONTAYON

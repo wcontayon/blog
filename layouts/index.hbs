@@ -12,12 +12,12 @@
         </div>
 
         <div class="row">
-            {{#each articles }}
+            {{#each (limit articles 10 0) }}
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box">
+                    <div class="icon-box" style="padding:34px;text-align:left;">
                       <h4><a href="/{{ path }}">{{ title }}</a></h4>
-                      <p>{{ blurb }}</p>
+                      <p>{{{ excerpt }}}</p>
                     </div>
                 </div>
 
@@ -25,14 +25,7 @@
         </div>
 
       </div>
-      <a href="/{{ pagination.previous.path }}">Newer post</a>
-      <a href="/{{ pagination.next.path }}">Older post</a>
-      <ul>
-      {{#each pagination.files}}
-        <li>
-          <a href="/{{this.full_slug}}">{{this.content.title}}</a> \ {{this.content.author.name}} <img src="{{this.content.author.content.image }}"> \ {{ moment content.date 'MMM DD, YYYY'}}
-        </li>
-      {{/each}}
+     
       </ul>
     </section><!-- End Services Section -->
 

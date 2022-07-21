@@ -13,6 +13,7 @@
         "metalsmith-assets": "^0.1.0",
         "metalsmith-collections": "^0.9.0",
         "metalsmith-discover-partials": "^0.1.2",
+        "metalsmith-excerpts": "^1.4.1",
         "metalsmith-layouts": "^2.3.1",
         "metalsmith-markdown": "^1.3.0",
         "metalsmith-metallic": "^2.0.3",
@@ -21,7 +22,8 @@
         "metalsmith-permalinks": "^2.2.0",
         "metalsmith-serve": "0.0.7",
         "metalsmith-tags": "^2.1.0",
-        "metalsmith-watch": "^1.0.3"
+        "metalsmith-watch": "^1.0.3",
+        "metalsmith-yearly-pagination": "^4.0.2"
     },
     "main": "build.js",
     "scripts": {

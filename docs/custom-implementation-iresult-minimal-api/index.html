@@ -36,6 +36,24 @@
    * Author: BootstrapMade.com
    * License: https://bootstrapmade.com/license/
    ======================================================== -->
+ 
+   <style>
+     .followme-box{
+       font-size: 18px;
+       display: inline-block;
+       background: #106eea;
+       color: #fff;
+       line-height: 1;
+       padding: 8px 0;
+       margin-right: 4px;
+       border-radius: 4px;
+       text-align: center;
+       width: 36px;
+       height: 36px;
+       transition: 0.3s;
+     }
+   </style>
+   
  </head>
  
  <body>
@@ -99,11 +117,11 @@
 
           <div class="col-lg-9">
             <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
-                <div class="portfolio-info" style="font-size: 12px; padding-top: 10px; padding-bottom: 10px;">
-                    <strong>Published</strong>: 11/juin/2022 / by <strong>wcontayon</strong><br />
-                    <strong>general | </strong>
-                    <strong>dotnet | </strong>
-                    <strong>aspnetcore | </strong>
+                <div class="portfolio-info" style="font-size: 16px; padding-top: 10px; padding-bottom: 10px;">
+                    <strong><i class="bi bi-calendar-date-fill"></i></strong> 11/juin/2022 &nbsp;&nbsp;&nbsp;
+                    <strong><i class="bi bi-person-fill"></i></strong> wcontayon</strong> &nbsp;&nbsp;&nbsp;<br />
+                    <strong><i class="bi bi-tags-fill"></i></strong> 
+                     |  general  |  dotnet  |  aspnetcore 
                 </div>
                 <hr />
                 
@@ -233,7 +251,18 @@ We can’t <span class="hljs-keyword">add</span> methods to the Results type bec
 <h3 id="summary">Summary</h3>
 <p>In this post I showed how you could return create a custom from a minimal API by creating a custom IResult type called <strong><code>XmlResult&lt;T&gt;</code></strong>. Then we created an extension method so that the result is exposed as <strong><code>Results.Extensions.Xml()</code></strong>. </p>
 
-            </div>
+
+                <hr style="margin:2rem 0px" />
+
+                
+                <div class="container py-4">
+                  <div class="social-links mt-3"> 
+                     <span><strong>Follow Me</strong></span>&nbsp;&nbsp;
+                     <a href="https://github.com/wcontayon/Adom.Framework" class="followme-box"><i class="bx bxl-github"></i></a> 
+                     <a href="https://www.linkedin.com/in/wcontayon/" class="followme-box"><i class="bx bxl-linkedin"></i></a></div>
+                  </div>
+                </div>            </div>
+
           </div>
 
           <div class="col-lg-3">
@@ -249,14 +278,9 @@ We can’t <span class="hljs-keyword">add</span> methods to the Results type bec
         </div>
 
       </div>
-        <ul>
-  </ul>
-    </section><!-- End Portfolio Details Section -->
-    <nav class="pagination">
-          <a href="benchmark-your-c-code-with-benchmark-.net">&lt; Prev</a>
-  
-    </nav>
-
+        
+    </section>
+    
   </main><!-- End #main -->
 
    <!-- ======= Footer ======= -->

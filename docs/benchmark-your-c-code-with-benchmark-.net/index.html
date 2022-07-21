@@ -36,6 +36,24 @@
    * Author: BootstrapMade.com
    * License: https://bootstrapmade.com/license/
    ======================================================== -->
+ 
+   <style>
+     .followme-box{
+       font-size: 18px;
+       display: inline-block;
+       background: #106eea;
+       color: #fff;
+       line-height: 1;
+       padding: 8px 0;
+       margin-right: 4px;
+       border-radius: 4px;
+       text-align: center;
+       width: 36px;
+       height: 36px;
+       transition: 0.3s;
+     }
+   </style>
+   
  </head>
  
  <body>
@@ -99,10 +117,11 @@
 
           <div class="col-lg-9">
             <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
-                <div class="portfolio-info" style="font-size: 12px; padding-top: 10px; padding-bottom: 10px;">
-                    <strong>Published</strong>: 20/oct./2021 / by <strong>wcontayon</strong><br />
-                    <strong>general | </strong>
-                    <strong>dotnet | </strong>
+                <div class="portfolio-info" style="font-size: 16px; padding-top: 10px; padding-bottom: 10px;">
+                    <strong><i class="bi bi-calendar-date-fill"></i></strong> 20/oct./2021 &nbsp;&nbsp;&nbsp;
+                    <strong><i class="bi bi-person-fill"></i></strong> wcontayon</strong> &nbsp;&nbsp;&nbsp;<br />
+                    <strong><i class="bi bi-tags-fill"></i></strong> 
+                     |  general  |  dotnet 
                 </div>
                 <hr />
                 
@@ -195,7 +214,18 @@ Follow the steps below to create a new .NET Core console application project in 
 <h3 id="summary">Summary</h3>
 <p>Before start any code optimisation, it’s important to define benchmark baseline. In that way you can see whether the improved code is faster or not, if its allocates less than the previous code, etc. Measurement of the improvements can help to guide further optimisations and also provide crucial data that can justify the time spent making code improvements. Benchmarking with a tool like Benchmark.NET is pretty straightforward for your .Net project.</p>
 
-            </div>
+
+                <hr style="margin:2rem 0px" />
+
+                
+                <div class="container py-4">
+                  <div class="social-links mt-3"> 
+                     <span><strong>Follow Me</strong></span>&nbsp;&nbsp;
+                     <a href="https://github.com/wcontayon/Adom.Framework" class="followme-box"><i class="bx bxl-github"></i></a> 
+                     <a href="https://www.linkedin.com/in/wcontayon/" class="followme-box"><i class="bx bxl-linkedin"></i></a></div>
+                  </div>
+                </div>            </div>
+
           </div>
 
           <div class="col-lg-3">
@@ -211,14 +241,9 @@ Follow the steps below to create a new .NET Core console application project in 
         </div>
 
       </div>
-        <ul>
-  </ul>
-    </section><!-- End Portfolio Details Section -->
-    <nav class="pagination">
-          <a href="dateonly-and-timeonly-with-.net6-preview-4">&lt; Prev</a>
-  
-    </nav>
-
+        
+    </section>
+    
   </main><!-- End #main -->
 
    <!-- ======= Footer ======= -->

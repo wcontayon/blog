@@ -5,12 +5,14 @@ const markdown = require('metalsmith-markdown');
 const layouts = require('metalsmith-layouts');
 const handlebars = require('handlebars');
 const collections = require('metalsmith-collections');
+const yearly_pagination  = require('metalsmith-yearly-pagination');
 const permalinks = require('metalsmith-permalinks');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const assets = require('metalsmith-assets');
 const pagination  = require('metalsmith-pagination');
 const tags = require('metalsmith-tags');
+const excerpts = require('metalsmith-excerpts');
 
 handlebars.registerHelper('moment', require('helper-moment'));
 handlebars.registerHelper('limit', function(collection, limit, start) {
@@ -30,8 +32,9 @@ handlebars.registerHelper('limit', function(collection, limit, start) {
 });
 
 var logPlugin = function(files, metalsmith, done) {
-    console.log(metalsmith);
-    done();
+  // console.log(files);
+  console.log(metalsmith);
+  done();
 };
 
 
@@ -62,9 +65,11 @@ metalsmith(__dirname)
       }
     }
   }))
+  .use(yearly_pagination({ path: 'archives/year' }))
   .use(discoverPartials())
   .use(metallic())
   .use(markdown())
+  .use(excerpts({ multipleFormat: true }))
   .use(permalinks({
     relative: false,
     pattern: ':title',

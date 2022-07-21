@@ -37,22 +37,27 @@
             </div>
             {{/if}}
             <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
-                <div class="portfolio-info" style="font-size: 12px; padding-top: 10px; padding-bottom: 10px;">
-                    <strong>Published</strong>: {{ moment date lang="fr" format="DD/MMM/YYYY" }} / by <strong>{{ author }}</strong><br />
-                    {{#each tags}}
-                    <strong>{{ name }} | </strong>
-                    {{/each}}
+                <div class="portfolio-info" style="font-size: 16px; padding-top: 10px; padding-bottom: 10px;">
+                    <strong><i class="bi bi-calendar-date-fill"></i></strong> {{ moment date lang="fr" format="DD/MMM/YYYY" }} &nbsp;&nbsp;&nbsp;
+                    <strong><i class="bi bi-person-fill"></i></strong> {{ author }}</strong> &nbsp;&nbsp;&nbsp;<br />
+                    <strong><i class="bi bi-tags-fill"></i></strong> 
+                    {{#each tags}} |  {{ name }} {{/each}}
                 </div>
                 <hr />
                 
                 {{{ contents }}}
+
+                <hr style="margin:2rem 0px" />
+
+                {{> article-footer}}
             </div>
+
           </div>
 
           <div class="col-lg-3">
             <div class="portfolio-info">
               {{#each category}}
-                  <a href="/{{this.path}}">{{this.tag}}</a>
+                  <a href="/{{path}}">{{tag}}</a>
               {{/each}}
             </div>
             
@@ -61,33 +66,9 @@
         </div>
 
       </div>
-        <ul>
-    {{#each (limit collections.articles this.pagination.end this.pagination.start)}}
-        <li class="post">
-            <h2 class="entry-title">
-                <a href="{{ path }}" rel="bookmark">{{ title }}</a>
-            </h2>
-            <article class="entry-summary">
-                {{{ blurb }}}
-            </article>
-            <footer>
-
-                <a href="{{ path }}" class="button">Read More</a>
-            </footer>
-        </li>
-    {{/each}}
-  </ul>
-    </section><!-- End Portfolio Details Section -->
-    <nav class="pagination">
-      {{#if this.next}}
-          <a href="{{this.next.path}}">&lt; Prev</a>
-      {{/if}}
-  
-      {{#if this.prev}}
-          <a href="{{this.prev.path}}">Next &gt;</a>
-      {{/if}}
-    </nav>
-
+        
+    </section>
+    
   </main><!-- End #main -->
 
   {{> footer }}
