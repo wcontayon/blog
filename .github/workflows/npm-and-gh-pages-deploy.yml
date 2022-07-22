@@ -20,7 +20,12 @@ jobs:
         run: npm run-script build
 
       - name: Deploy docs folder to gh-pages
-        run: git subtree push --prefix 'docs/' origin gh-pages
+        run: |
+          git checkout --orphan gh-pages
+          git --work-tree docs add --all
+          git --work-tree docs commit -m "push blogs built to gh-pages"
+          git push origin HEAD:gh-pages --force
+          git checkout -f main
 
 
     
