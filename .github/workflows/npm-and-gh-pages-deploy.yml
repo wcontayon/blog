@@ -20,7 +20,11 @@ jobs:
         run: npm run-script build
 
       - name: Deploy docs folder to gh-pages
-        run: |
+        run: |     
+          # git config user.email "${{ secrets.USER_EMAIL }}"
+          # git config user.name " ${{ secrets.USER_NAME }}"
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
           git checkout --orphan gh-pages
           git --work-tree docs add --all
           git --work-tree docs commit -m "push blogs built to gh-pages"
