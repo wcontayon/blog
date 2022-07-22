@@ -17,7 +17,6 @@ const excerpts = require('metalsmith-excerpts');
 
 handlebars.registerHelper('moment', require('helper-moment'));
 handlebars.registerHelper(groupBy(handlebars));
-handlebars.registerHelper('prefixLink', function(value){ return `${value}`;});
 handlebars.registerHelper('limit', function(collection, limit, start) {
   var out   = [],
       i, c;
@@ -45,7 +44,8 @@ metalsmith(__dirname)
   .metadata({
     site: {
       name: 'Adom',
-      description: "Blog about Microsoft technologies (.NET, .NET Core, ASP.NET Core, Azure, etc.)"
+      description: "Blog about Microsoft technologies (.NET, .NET Core, ASP.NET Core, Azure, etc.)",
+      prefixLink: ''
     }
   })
   .source('./src')

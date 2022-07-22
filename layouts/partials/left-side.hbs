@@ -22,9 +22,15 @@
 
     <div class="member-info">
         <h5>Recents Posts</h5>
+        {{#if site.prefixLink}}
         {{#each (limit collections.articles 2 0)}}
-           <a class="question" href="/{{prefixLink path}}" style="text-decoration:underline;">{{title}}</a><br />
+           <a class="question" href="/blog/{{path}}" style="text-decoration:underline;">{{title}}</a><br />
         {{/each}}
+        {{else}}
+         {{#each (limit collections.articles 2 0)}}
+           <a class="question" href="/{{path}}" style="text-decoration:underline;">{{title}}</a><br />
+        {{/each}}
+        {{/if}}
     </div>
 
     <hr />

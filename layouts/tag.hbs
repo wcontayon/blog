@@ -9,7 +9,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2 style="font-size: 2rem; font-weight:bold;">{{ title }}</h2>
           <ol>
-            <li><a href="/{{ prefixLink '' }}">Home</a></li>
+            <li><a href="/{{ site.prefixLink }}">Home</a></li>
             <li>{{ title }}</li>
           </ol>
         </div>
@@ -41,8 +41,8 @@
                     <li><small>{{moment date lang="fr" format="DD/MM/YYYY"}}</small> {{title}}</li>
                 {{/each}}
                 </ul>
-                {{#if pagination.previous}}<a href="{{prefixLink pagination.previous.path}}">Previous</a>{{/if}}
-                {{#if pagination.next}}<a href="{{prefixLink pagination.next.path}}">Next</a>{{/if}}
+                {{#if pagination.previous}}<a href="{{site.prefixLink}}{{pagination.previous.path}}">Previous</a>{{/if}}
+                {{#if pagination.next}}<a href="{{site.prefixLink}}{{pagination.next.path}}">Next</a>{{/if}}
               
             </div>
           </div>
@@ -61,11 +61,11 @@
     </section><!-- End Portfolio Details Section -->
     <nav class="pagination">
       {{#if this.pagination.next}}
-          <a href="{{prefixLink this.pagination.next.path}}">&lt; Prev</a>
+          <a href="{{site.prefixLink}}{{this.pagination.next.path}}">&lt; Prev</a>
       {{/if}}
   
       {{#if this.pagination.prev}}
-          <a href="{{prefixLink this.pagination.prev.path}}">Next &gt;</a>
+          <a href="{{site.prefixLink}}{{this.pagination.prev.path}}">Next &gt;</a>
       {{/if}}
     </nav>
     {{#if this.pagination}}

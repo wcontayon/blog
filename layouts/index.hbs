@@ -12,21 +12,34 @@
         </div>
 
         <div class="row">
+            {{#if site.prefixLink}}
             {{#each (limit articles 10 0) }}
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box" style="padding:34px;text-align:left;">
-                      <h4><a href="/{{ prefixLink path }}">{{ title }}</a></h4>
+                      <h4><a href="/blog/{{path}}">{{ title }}</a></h4>
                       <p>{{{ excerpt }}}</p>
                     </div>
                 </div>
 
             {{/each}}
+            {{else}}
+            {{#each (limit articles 10 0) }}
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box" style="padding:34px;text-align:left;">
+                      <h4><a href="{{path}}">{{ title }}</a></h4>
+                      <p>{{{ excerpt }}}</p>
+                    </div>
+                </div>
+
+            {{/each}}
+            {{/if}}
         </div>
 
         <div class="row">
           <div class="col-lg-12 text-center">
-            <a href="/{{ prefixLink 'archives' }}" class="btn-get-started scrollto">More posts</a>
+            <a href="/{{ site.prefixLink }}archives" class="btn-get-started scrollto">More posts</a>
           </div>
         </div>
 
