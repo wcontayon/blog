@@ -9,7 +9,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2 style="font-size: 2rem; font-weight:bold;">{{ title }}</h2>
           <ol>
-            <li><a href="/">Home</a></li>
+            <li><a href="/{{ prefixLink '' }}">Home</a></li>
             <li>{{ title }}</li>
           </ol>
         </div>
@@ -50,7 +50,7 @@
           <div class="col-lg-3">
             <div class="portfolio-info">
               {{#each category}}
-                  <a href="/{{path}}">{{tag}}</a>
+                  <a href="/{{ prefixLink path}}">{{tag}}</a>
               {{/each}}
             </div>
             

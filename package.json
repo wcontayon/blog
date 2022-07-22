@@ -29,6 +29,7 @@
     "main": "build.js",
     "scripts": {
         "prestart": "npm install",
-        "start": "node ."
+        "start": "node .",
+        "build": "npm install && node ./build-prd.js"
     }
 }

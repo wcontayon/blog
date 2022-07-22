@@ -9,7 +9,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2 style="font-size: 2rem; font-weight:bold;">{{ title }}</h2>
           <ol>
-            <li><a href="/">Home</a></li>
+            <li><a href="/{{ prefixLink '' }}">Home</a></li>
             <li>{{ title }}</li>
           </ol>
         </div>
@@ -32,7 +32,7 @@
                 {{#group collections.articles by="year"}}
                     <h4><span>{{ value }}</span></h4>
                     {{#each items}}
-                        <a class="question" href="/{{path}}" style="text-decoration:underline;">{{title}}</a><br />
+                        <a class="question" href="/{{ prefixLink path}}" style="text-decoration:underline;">{{title}}</a><br />
                     {{/each}}
                     <hr />
                 {{/group}}
@@ -45,7 +45,7 @@
             <div class="portfolio-info">
               {{#each category}}
                 {{#each @key}}
-                  <a href="/{{this.path}}">{{@key}}{{this}}</a>
+                  <a href="/{{prefixLink this.path}}">{{@key}}{{this}}</a>
                 {{/each}}
               {{/each}}
             </div>

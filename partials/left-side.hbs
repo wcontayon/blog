@@ -23,7 +23,7 @@
     <div class="member-info">
         <h5>Recents Posts</h5>
         {{#each (limit collections.articles 2 0)}}
-           <a class="question" href="/{{path}}" style="text-decoration:underline;">{{title}}</a><br />
+           <a class="question" href="/{{prefixLink path}}" style="text-decoration:underline;">{{title}}</a><br />
         {{/each}}
     </div>
 
