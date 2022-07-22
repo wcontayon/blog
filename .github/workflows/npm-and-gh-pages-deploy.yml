@@ -1,30 +1,26 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Build blog and push to gh-pages
-
-on:
+name: Commit date to master
+on: 
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
-  build_with_npm_and_deploy:
+  build:
     runs-on: ubuntu-latest
-    name: Build and deploy docs to gh-pages 
     steps:
-    - uses: actions/checkout@v3
-    - name: Running npm command with Node ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16.x
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run-script build
-    
-    - name: Committing to 'gh-pages'
-    - run: git deploy-gh-pages docs/
+      # Checkout the branch
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Install latest Node 
+        uses: actions/setup-node@v3
+        
+      - name: Running npm command
+        run: npm run-script build
+
+      - name: Deploy docs folder to gh-pages
+        run: git deploy-gh-pages "docs/"
 
 
     
