@@ -1,4 +1,4 @@
-name: Commit date to master
+name: Build and deploy my Blog
 on: 
   push:
     branches: [ "main" ]
@@ -20,7 +20,7 @@ jobs:
         run: npm run-script build
 
       - name: Deploy docs folder to gh-pages
-        run: git deploy-gh-pages "docs/"
+        run: git subtree push --prefix 'docs/' origin gh-pages
 
 
     
