@@ -1,5 +1,6 @@
 const metalsmith = require('metalsmith');
 const metallic = require('metalsmith-metallic');
+const drafts = require('metalsmith-drafts');
 const discoverPartials = require('metalsmith-discover-partials');
 const markdown = require('metalsmith-markdown');
 const layouts = require('metalsmith-layouts');
@@ -50,6 +51,7 @@ metalsmith(__dirname)
   })
   .source('./src')
   .destination('./docs')
+  .use(drafts())
   .use(collections({
     articles:{
       pattern: 'articles/**/*.md',
