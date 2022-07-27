@@ -2,6 +2,8 @@
 title: 'Data export system with Azure, SignalR and AspNetCore'
 date: 2022-06-28
 year: 2022
+publish: draft
+draft: true
 author: 'wcontayon'
 blurb: 'Data export system with Azure, SignalR and AspNetCore'
 tags: general, azure, aspnetcore
