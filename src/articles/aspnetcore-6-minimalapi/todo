@@ -11,6 +11,7 @@
     - Middleware
     - Write your ownn Middleware in your Minimal API
     - Dependency Injection
+[] Model Binding in Minimal Api
 [] Routing in Minimal API
 [] Response Minimal API
     - IResult in Minimal API
