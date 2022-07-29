@@ -119,16 +119,16 @@ metalsmith(__dirname)
     source: './layouts/assets',
     destination: './assets'
   }))
-  // .use(serve({
-  //   port: 8081,
-  //   verbose: true
-  // }))
-  // .use(watch({
-  //     paths: {
-  //       "${source}/**/*": true,
-  //       "layouts/**/*": "**/*",
-  //     }
-  //   }))
+  .use(serve({
+    port: 8081,
+    verbose: true
+  }))
+  .use(watch({
+      paths: {
+        "${source}/**/*": true,
+        "layouts/**/*": "**/*",
+      }
+    }))
   .use(logPlugin)
   .build(function (err) {
     if (err) {
