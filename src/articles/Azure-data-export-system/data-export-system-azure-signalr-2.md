@@ -1,12 +1,12 @@
 ---
 title: 'Data export system with Azure and SignalR - Part 2'
-date: 2022-06-29
+date: 2022-06-30
 year: 2022
-publish: draft
-draft: true
 author: 'wcontayon'
 blurb: 'Cloud solution: Data export system with Azure and SignalR'
 tags: cloud-architecture, azure, aspnetcore
+comments: true 
+
 ---
 
 In the previous post [Data export system with Azure and SignalR - Part 2]('https://wcontayon.github.io/blog/data-export-system-with-azure-and-signalr-part-1'), we described our solution design to implement a Data export system with Azure and SignalR.
@@ -17,7 +17,7 @@ In the next words, we'll implement our service code **`IAzureStorageService`** a
 ## `IAzureStorageService` implementation
 Our **`IAzurestorageService`** will be our helper to upload file to **Azure File Share**, enqueue and dequeue from **Azure Queue**.
 
-First we implement a private funciton to upload a **`File Stream`** to our Azure **File Share**.
+First we implement a private function to upload a **`File Stream`** to our Azure **File Share**.
 
 ```cs
 // Import librairies
@@ -74,6 +74,7 @@ private async ValueTask<string> UploadStreamAsync(
 }
 ```
 We have an **`AzureStorageHelpers`** that helps us to have a [**CloudFile**](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.storage.file.cloudfile?view=azure-dotnet-legacy) object representing our destination file in **Azure file share**.
+
 ```cs
 using Microsoft.Azure.Storage;
 using Microsoft.Azure.Storage.File;
@@ -127,6 +128,7 @@ namespace ExportDataSystem
 {
     public class AzureStorageService : IAzureStorageService
     {
+        // DeQueue messages from Azure Queue storage
         public async ValueTask<string[]> DeQueueAsync(int count = 5)
         {
             var queue = await EnsureQueueClient();
@@ -147,7 +149,8 @@ namespace ExportDataSystem
             return messages.ToArray();
         }
 
-        public async ValueTask<bool> QueueAsync(string message)
+        // EnQueue message to Azure Queue
+        public async ValueTask<bool> EnQueueAsync(string message)
         {
             try
             {
@@ -270,17 +273,17 @@ using System.Threading.Tasks;
 
 namespace ExportDataSystem
 {
-    public class SictBackgroundTask : IHostedService, IAsyncDisposable
+    public class ExportBackgroundTask : IHostedService, IAsyncDisposable
     {
         private Timer _timer;
         private bool _disposed;
 
-        private readonly IHubContext<ImportExportHub> _exportHub;
+        private readonly IHubContext<SignalRHub> _exportHub;
         private readonly IAzureStorageService _azureStorageService;
         private readonly IServiceScopeFactory _serviceScopeFactory;
 
-        public SictBackgroundTask(
-            IHubContext<ImportExportHub> exportHubContext,
+        public ExportBackgroundTask(
+            IHubContext<SignalRHub> exportHubContext,
             IAzureStorageService azureStorageService,
             IServiceScopeFactory serviceScopeFactory)
         {
@@ -357,8 +360,8 @@ namespace ExportDataSystem
 Let's go deep dive into the code <br />
 
 To implement a **`IHostedService`** interface, we must define theses methods
-- **`StartAsync(CancellationToken)`** it's called when the task is started
-- **`StopAsync(CancellationToken)`** called before stoping the host server.
+- **`StartAsync(CancellationToken)`** 
+- **`StopAsync(CancellationToken)`** 
 <br />
 
 In the **`StartAsync`** we create a **`Timer`** to execute our routinge every 30s (can be changed).
@@ -368,4 +371,70 @@ return Task.CompletedTask;
 ```
 <br />
 
-The main method **`ExecuteAsync`** will consume the available messages from our **Azure Queue**
+The main method **`ExecuteAsync`** will consume the available messages from our **Azure Queue**, and process the export from our backend repository.
+<br />
+First we get our service injected
+
+```cs
+// Since our background service lives outside a HttpRequest, to use our service injected,
+// we create a service scope
+var scope = _serviceScopeFactory.CreateScope();
+IExportService exportService = scope.ServiceProvider.GetRequiredService<IExportService>();
+```
+<br />
+
+Then, we dequeue all the messages in a **`List<string>`**. We then iterate through theses messages
+
+```cs
+// Get request export message from the queue
+var messages = await _azureStorageService.DeQueueAsync();
+
+// Iterate throught the list and process the request
+foreach (string msg in messages)
+{
+    // For each message, we deserialize to an object, since message in the queue are format
+    // as string
+    ExportRequest request = JsonConvert.DeserializeObject<ExportRequest>(msg);
+  
+    // Launch the export process
+    // Make a call to your backend service to extract data and upload the exported file to Azure
+    var url = exportService.GetAndExportAsync(request);
+
+    // Set the result
+    // ...
+    //
+
+    // Notify the client to download with SignalR Hub
+    await _exportHub.Clients.Client(request.ConnexionId!).SendAsync("exportCompleted", JsonConvert.SerializeObject(result));
+}
+
+await ((IAsyncDisposable)scope).DisposeAsync().ConfigureAwait(false);
+```
+
+<br />
+
+The **`ExportRequest`** class contains information about the data to be exported. It's sent to the queue from our backend api (we'll see the implementation in the next article).<br />
+
+```cs
+public record ExportRequest(string ConnexionId, string From, string To, string SearchInput, string Table);
+```
+
+<br />
+
+- **`ConnexionId`** is the identifier got from SignalR, when the client load the page and get connected to SignalR hub.
+- **`From`** and **`To`** the period in which the data need to be extracted
+- **`SearchInput`** any other search expression
+- **`Table`** table concerned by the extraction.
+
+> **_NOTE:_** The **`ExportRequest`** is an example, you can implement a different struct for your request class.
+
+<br />
+<hr />
+
+### Summary
+
+In this article we've seen how we can implement a Helper service **`IAzureServiceStorage`** to interact with **Azure Queue** and **Azure File Share**, and a **`IHostedService`** to dequeue messages and process the export to be upload on **Azure File Share**.
+<br />
+
+The next post will talk about how we can implement the **backend Api** to receive the export request, enqueue the request to **Azure Queue**.
+Finally, we'll see how to connect and receive notification from **SignalR Hub** and test the whole solution.

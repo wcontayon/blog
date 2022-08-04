@@ -2,6 +2,7 @@ const metalsmith = require('metalsmith');
 const metallic = require('metalsmith-metallic');
 const drafts = require('metalsmith-drafts');
 const discoverPartials = require('metalsmith-discover-partials');
+const commento = require('metalsmith-commento');
 const markdown = require('metalsmith-markdown');
 const layouts = require('metalsmith-layouts');
 const handlebars = require('handlebars');
@@ -74,6 +75,11 @@ metalsmith(__dirname)
   .use(discoverPartials())
   .use(metallic())
   .use(markdown())
+  .use(commento({
+    autoInit: false,
+    idRoot: 'comments-block',
+    counterSelector: '.comments-counter'
+  }))
   .use(excerpts({ multipleFormat: true }))
   .use(permalinks({
     relative: false,

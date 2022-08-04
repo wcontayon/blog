@@ -2,6 +2,7 @@ const metalsmith = require('metalsmith');
 const metallic = require('metalsmith-metallic');
 const discoverPartials = require('metalsmith-discover-partials');
 const markdown = require('metalsmith-markdown');
+const commento = require('metalsmith-commento');
 const layouts = require('metalsmith-layouts');
 const handlebars = require('handlebars');
 const groupBy = require('handlebars-group-by');
@@ -72,6 +73,11 @@ metalsmith(__dirname)
   .use(discoverPartials())
   .use(metallic())
   .use(markdown())
+  .use(commento({
+    autoInit: false,
+    idRoot: 'comments-block',
+    counterSelector: '.comments-counter'
+  }))
   .use(excerpts({ multipleFormat: true }))
   .use(permalinks({
     relative: false,
