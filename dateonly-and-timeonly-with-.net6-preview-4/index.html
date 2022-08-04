@@ -1,0 +1,286 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ 
+   <title> DateOnly and TimeOnly with .NET6 Preview 4 -  Adom</title>
+   <meta content="" name="description">
+   <meta content="" name="keywords">
+   <meta name="description" content=" DateOnly and TimeOnly with .NET6 Preview 4 " />
+ 
+   <!-- Favicons -->
+   <link href="../favicon/favicon.ico" rel="icon">
+   <link href="../favicon/apple-touch-icon.png" rel="apple-touch-icon">
+ 
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
+   <!-- Vendor CSS Files -->
+   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+   <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark.css">
+ 
+   <!-- Template Main CSS File -->
+   <link href="../assets/css/style.css" rel="stylesheet">
+ 
+   <!-- =======================================================
+   * Template Name: BizLand - v3.7.0
+   * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+   * Author: BootstrapMade.com
+   * License: https://bootstrapmade.com/license/
+   ======================================================== -->
+ 
+   <style>
+     .followme-box{
+       font-size: 18px;
+       display: inline-block;
+       background: #106eea;
+       color: #fff;
+       line-height: 1;
+       padding: 8px 0;
+       margin-right: 4px;
+       border-radius: 4px;
+       text-align: center;
+       width: 36px;
+       height: 36px;
+       transition: 0.3s;
+     }
+   </style>
+   
+ </head>
+ 
+ <body>
+ 
+     <!-- ======= Top Bar ======= -->
+   <section id="topbar" class="d-flex align-items-center">
+     <div class="container d-flex justify-content-center justify-content-md-between">
+       <div class="contact-info d-flex align-items-center">
+         <!-- <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"> -->
+         <strong><span style="font-size:17px;">Adom</span></strong>&nbsp;&nbsp; Blog about Microsoft technologies (.NET, .NET Core, ASP.NET Core, Azure, etc.)</a></i>
+         <!-- <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i> -->
+       </div>
+       <div class="social-links d-none d-md-flex align-items-center">
+         <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bi bi-github"></i></a>
+         <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+       </div>
+     </div>
+   </section>
+ 
+   <!-- ======= Header ======= -->
+   <header id="header" class="d-flex align-items-center">
+     <div class="container d-flex align-items-center justify-content-between">
+ 
+       <!-- <h1 class="logo"><a href="index.html">Adom<span>.</span></a></h1> -->
+       <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="/" class="logo"><img src="../assets/img/Adom.png" alt=""></a>
+ 
+       <nav id="navbar" class="navbar">
+         <ul>
+           <li><a class="nav-link" href="/blog/">Home</a></li>
+           <li><a class="nav-link" href="/blog/about-me">About</a></li>
+           <li><a class="nav-link" href="/blog/contact">Contact</a></li>
+         </ul>
+         <i class="bi bi-list mobile-nav-toggle"></i>
+       </nav><!-- .navbar -->
+ 
+     </div>
+   </header><!-- End Header -->
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 style="font-size: 2rem; font-weight:bold;">DateOnly and TimeOnly with .NET6 Preview 4</h2>
+          <ol>
+            <li><a href="/blog/">Home</a></li>
+            <li>DateOnly and TimeOnly with .NET6 Preview 4</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-9">
+            <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
+                <div class="portfolio-info" style="font-size: 16px; padding-top: 10px; padding-bottom: 10px;">
+                    <strong><i class="bi bi-calendar-date-fill"></i></strong> 12/oct./2021 &nbsp;&nbsp;&nbsp;
+                    <strong><i class="bi bi-person-fill"></i></strong> wcontayon</strong> &nbsp;&nbsp;&nbsp;<br />
+                    <strong><i class="bi bi-tags-fill"></i></strong> 
+                     |  general  |  dotnet 
+                </div>
+                <hr />
+                
+                <p>The Last .NET preview (.NET 6 preview 4) has introduced two type in the core library DateOnly and TimeOnly.
+Thes new types allow us to represent the date or time portion of a DateTime. They are structs (value types) and can be used independently. We can find these type in System namespace.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong>  To access these types, you’ll need to download and install .NET 6 preview 4 (or newer) and Visual Studio 16.11 (currently in preview).</p>
+</blockquote>
+<h3 id="dateonly">DateOnly</h3>
+<p>We use <strong><code>DateOnly</code></strong> type when we need to deal with a date without any time represation. For example, let’s say we need to save the a start date of an employee in our application. In such cases, we rarely need the time portion of a DateTime, and the workaround solution would be to set the time to <code>00:00:00.000</code>. With <strong><code>DateOnly</code></strong>, we are more explicit, and do not worry about any time portion.
+To create an instance of <strong><code>DateOnly</code></strong>, we just need the year, month and day as arguments.</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">var</span> dateOnly = <span class="hljs-keyword">new</span> DateOnly(<span class="hljs-number">2020</span>, <span class="hljs-number">01</span>, <span class="hljs-number">01</span>);</code></pre>
+
+<p>The code snippet creates a <strong><code>DateOnly</code></strong> representing the 1st January 2020.
+The <strong><code>DateOnly</code></strong> struct, uses internally an integer to track a day numbery from 0 (1st January 0001) to 3,652, 058 (31st December 9999).
+An another usefull feature of <strong><code>DateOnly</code></strong> is that you can create a <strong><code>DateOnly</code></strong> instance from a <strong><code>DateTime</code></strong> like this:</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">var</span> dateOnly = DateOnly.FromDateTime(DateTime.Now);</code></pre>
+
+<p>We can achieve more operation like Parse a string and convert to a <strong><code>DateOnly</code></strong> instance</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">var</span> dateParse = DateOnly.Parse(<span class="hljs-string">"05/06/2021"</span>, CultureInfo.InvariantCulture); 
+<span class="hljs-keyword">if</span> (DateOnly.TryParse(<span class="hljs-string">"05/06/2021"</span>, <span class="hljs-keyword">new</span> CultureInfo(<span class="hljs-string">"en-EN"</span>), DateTimeStyles.None, <span class="hljs-keyword">out</span> <span class="hljs-keyword">var</span> dateOnlyParsed){
+...
+}</code></pre>
+
+<p>We can also, use existing operation of DateTime struct like (<strong><code>AddDays</code></strong>, <strong><code>AddMonths</code></strong>, <strong><code>AddYears</code></strong>)</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">var</span> dateOnly = DateOnly.Parse(<span class="hljs-string">"05/06/2021"</span>, CultureInfo.InvariantCulture); 
+<span class="hljs-keyword">var</span> addDayDate = dateOnly.AddDays(<span class="hljs-number">1</span>); <span class="hljs-comment">// 06/06/2021 </span>
+<span class="hljs-keyword">var</span> addMonthDate = dateOnly.AddMonths(<span class="hljs-number">2</span>); <span class="hljs-comment">// 05/08/2021 </span>
+<span class="hljs-keyword">var</span> addYearDate = dateOnly.AddYears(<span class="hljs-number">1</span>); <span class="hljs-comment">// 05/06/2022</span></code></pre>
+
+<p>You can learn more about <strong><code>DateOnly</code></strong> struct from the official <a href="https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/DateOnly.cs">dotnet github repository</a></p>
+<h3 id="timeonly">TimeOnly</h3>
+<p>The purpose of <strong><code>TimeOnly</code></strong> struct is to represent a time that is independent of the date. Let’s think about developing an application when you need to store the time of registration of an user. In such situation, we’ll save the date and the time, but the date is not needed here, because you already have a registration date field. The <strong><code>TimeOnly</code></strong> is best suited for that.</p>
+<p>The <strong><code>TimeOnly</code></strong> type has several constructor overloads. The more common ones that I expect most developers will use allow us to create a date accepting either the hour and minute for the time, the hour, minute and second, or the hour, minute, second and millisecond.</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">var</span> timeValue = <span class="hljs-keyword">new</span> TimeOnly(<span class="hljs-number">10</span>, <span class="hljs-number">30</span>); <span class="hljs-comment">// 10h30min.</span></code></pre>
+
+<p>The code snippet creates an 24-hour clock format of time 10h30min (10h30 A.M).
+The <strong><code>TimeOnly</code></strong> works with a long representing the number of ticks (100 nanosecond intervals) elapsed since midnight by the defined time.
+Ex: 1 AM means 36 000 000 000 ticks since midnight (00:00:00.0000000).</p>
+<p>We can create a <strong><code>TimeOnly</code></strong> instance from ticks with the following constructor public <strong><code>TimeOnly(long ticks)</code></strong>;</p>
+<p><strong><code>TimeOnly</code></strong> offers mathematic operations instances, such as sum and calculating the difference.</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">var</span> startTime = <span class="hljs-keyword">new</span> TimeOnly(<span class="hljs-number">17</span>, <span class="hljs-number">00</span>, <span class="hljs-number">00</span>);
+<span class="hljs-keyword">var</span> endTime = <span class="hljs-keyword">new</span> TimeOnly(<span class="hljs-number">19</span>, <span class="hljs-number">00</span>, <span class="hljs-number">00</span>);
+<span class="hljs-keyword">var</span> diff = endTime - startTime;
+Console.WriteLine(<span class="hljs-string">$"Hours: <span class="hljs-subst">{diff.TotalHours}</span>"</span>);<span class="hljs-comment">// Output = Hours: 2</span></code></pre>
+
+<p>Another usefull operation we can perform is to identify whether a particular TimeOnly falls within a time window. For example, let’s say we want to check if the current time is between the start and end times we have already defined. Just as with <strong><code>DateOnly</code></strong>, we can convert from an existing DateTime into a <strong><code>TimeOnly</code></strong> using the <strong><code>FromDateTime</code></strong> static method.</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">var</span> currentTime = TimeOnly.FromDateTime(DateTime.Now);
+<span class="hljs-keyword">var</span> isBetween = currentTime.IsBetween(startTime, endTime);
+Console.WriteLine(<span class="hljs-string">$"Current time <span class="hljs-subst">{(isBetween ? <span class="hljs-string">"is"</span> : <span class="hljs-string">"is not"</span>)}</span> between start and end"</span>);</code></pre>
+
+<p>The <strong><code>IsBetween</code></strong> method accepts normal ranges such as the one we used in the prior example as well as ranges that span midnight such as 22:00-02:00.</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">var</span> startTime = <span class="hljs-keyword">new</span> TimeOnly(<span class="hljs-number">22</span>, <span class="hljs-number">00</span>);
+<span class="hljs-keyword">var</span> endTime = <span class="hljs-keyword">new</span> TimeOnly(<span class="hljs-number">02</span>, <span class="hljs-number">00</span>);
+<span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> TimeOnly(<span class="hljs-number">23</span>, <span class="hljs-number">25</span>); 
+<span class="hljs-keyword">var</span> isBetween = now.IsBetween(startTime, endTime);
+Console.WriteLine(<span class="hljs-string">$"Current time <span class="hljs-subst">{(isBetween ? <span class="hljs-string">"is"</span> : <span class="hljs-string">"is not"</span>)}</span> between start and end"</span>); <span class="hljs-comment">// Output = Current time is between start and end</span></code></pre>
+
+<p><strong><code>TimeOnly</code></strong> also includes operators to compare times using a circular clock.</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">var</span> startTime = <span class="hljs-keyword">new</span> TimeOnly(<span class="hljs-number">08</span>, <span class="hljs-number">00</span>);
+<span class="hljs-keyword">var</span> endTime = <span class="hljs-keyword">new</span> TimeOnly(<span class="hljs-number">09</span>, <span class="hljs-number">00</span>); 
+Console.WriteLine(<span class="hljs-string">$"<span class="hljs-subst">{startTime &lt; endTime}</span>"</span>);<span class="hljs-comment">// Output = True</span></code></pre>
+<p>This code checks if 8h00 am is earlier than 9h00 am, which clearly it is!</p>
+<p>You can learn more about <strong><code>TimeOnly</code></strong> struct type on the official <a href="https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/TimeOnly.cs">dotnet github repository</a>.</p>
+<h3 id="summary">Summary</h3>
+<p><strong><code>DateOnly</code></strong> and <strong><code>TimeOnly</code></strong> offer great features and flexibility to .Net developers.
+.NEt 6 preview 4 comes with a lot a new features <a href="https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-4/">https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-4/</a>.</p>
+
+
+                <hr style="margin:2rem 0px" />
+
+                
+                <div class="container py-4">
+                  <div class="social-links mt-3"> 
+                     <span><strong>Follow Me</strong></span>&nbsp;&nbsp;
+                     <a href="https://github.com/wcontayon/Adom.Framework" class="followme-box"><i class="bx bxl-github"></i></a> 
+                     <a href="https://www.linkedin.com/in/wcontayon/" class="followme-box"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>            </div>
+            
+            <hr />
+
+          </div>
+
+          <div class="col-lg-3 team" style="padding-top:0px;">
+            
+            <div class="member" style="background-color:#f6f9fe; border:1px solid #9db7e3; box-shadow: 0px 0px 0px;">
+                <div class="member-img">
+                 
+                </div>
+                <div class="member-info">
+                    <h3>Comlan William CONTAYON</h3> 
+                    <span>wcontayon</span>
+            
+                    <br />
+            
+                    <strong>Senior Software Engineer</strong><br />
+                    Microsoft technology enthusiast<br />
+            
+                    <div class="social-links mt-3"> 
+                        <a href="https://github.com/wcontayon/Adom.Framework" class="followme-box"><i class="bx bxl-github"></i></a> 
+                        <a href="https://www.linkedin.com/in/wcontayon/" class="followme-box"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+            
+                <hr />
+            
+                <div class="member-info">
+                    <h5>Recents Posts</h5>
+                       <a class="question" href="/blog/rate-limiting-annoucement-in-.net7-preview" style="text-decoration:underline;">Rate Limiting annoucement in .Net7 preview</a><br />
+                       <a class="question" href="/blog/data-export-system-with-azure-and-signalr-part-2" style="text-decoration:underline;">Data export system with Azure and SignalR - Part 2</a><br />
+                       <a class="question" href="/blog/data-export-system-with-azure-and-signalr-part-1" style="text-decoration:underline;">Data export system with Azure and SignalR - Part 1</a><br />
+                </div>
+            
+                <hr />
+            
+                <div class="member-info">
+                    <h5>Related Blogs</h5>
+                    <a class="question" href="https://devblogs.microsoft.com" style="text-decoration:underline;">Dev Microsoft Blog</a><br />
+                </div>
+            </div>          </div>
+
+        </div>
+
+      </div>
+        
+    </section>
+    
+  </main><!-- End #main -->
+
+   <!-- ======= Footer ======= -->
+   <footer id="footer">
+  
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Adom</span></strong>. All Rights Reserved. Built with <a href="">metalsmith</a>
+        </div>
+        <div class="credits" style="font-size:16px;">
+          <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+  
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/purecounter/purecounter.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+  
+  </body>
+  </html>

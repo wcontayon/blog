@@ -1,0 +1,293 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ 
+   <title> Data export system with Azure and SignalR - Part 1 -  Adom</title>
+   <meta content="" name="description">
+   <meta content="" name="keywords">
+   <meta name="description" content=" Cloud solution: Data export system with Azure and SignalR " />
+ 
+   <!-- Favicons -->
+   <link href="../favicon/favicon.ico" rel="icon">
+   <link href="../favicon/apple-touch-icon.png" rel="apple-touch-icon">
+ 
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
+   <!-- Vendor CSS Files -->
+   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+   <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark.css">
+ 
+   <!-- Template Main CSS File -->
+   <link href="../assets/css/style.css" rel="stylesheet">
+ 
+   <!-- =======================================================
+   * Template Name: BizLand - v3.7.0
+   * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+   * Author: BootstrapMade.com
+   * License: https://bootstrapmade.com/license/
+   ======================================================== -->
+ 
+   <style>
+     .followme-box{
+       font-size: 18px;
+       display: inline-block;
+       background: #106eea;
+       color: #fff;
+       line-height: 1;
+       padding: 8px 0;
+       margin-right: 4px;
+       border-radius: 4px;
+       text-align: center;
+       width: 36px;
+       height: 36px;
+       transition: 0.3s;
+     }
+   </style>
+   
+ </head>
+ 
+ <body>
+ 
+     <!-- ======= Top Bar ======= -->
+   <section id="topbar" class="d-flex align-items-center">
+     <div class="container d-flex justify-content-center justify-content-md-between">
+       <div class="contact-info d-flex align-items-center">
+         <!-- <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"> -->
+         <strong><span style="font-size:17px;">Adom</span></strong>&nbsp;&nbsp; Blog about Microsoft technologies (.NET, .NET Core, ASP.NET Core, Azure, etc.)</a></i>
+         <!-- <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i> -->
+       </div>
+       <div class="social-links d-none d-md-flex align-items-center">
+         <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bi bi-github"></i></a>
+         <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+       </div>
+     </div>
+   </section>
+ 
+   <!-- ======= Header ======= -->
+   <header id="header" class="d-flex align-items-center">
+     <div class="container d-flex align-items-center justify-content-between">
+ 
+       <!-- <h1 class="logo"><a href="index.html">Adom<span>.</span></a></h1> -->
+       <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="/" class="logo"><img src="../assets/img/Adom.png" alt=""></a>
+ 
+       <nav id="navbar" class="navbar">
+         <ul>
+           <li><a class="nav-link" href="/blog/">Home</a></li>
+           <li><a class="nav-link" href="/blog/about-me">About</a></li>
+           <li><a class="nav-link" href="/blog/contact">Contact</a></li>
+         </ul>
+         <i class="bi bi-list mobile-nav-toggle"></i>
+       </nav><!-- .navbar -->
+ 
+     </div>
+   </header><!-- End Header -->
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 style="font-size: 2rem; font-weight:bold;">Data export system with Azure and SignalR - Part 1</h2>
+          <ol>
+            <li><a href="/blog/">Home</a></li>
+            <li>Data export system with Azure and SignalR - Part 1</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-9">
+            <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
+                <div class="portfolio-info" style="font-size: 16px; padding-top: 10px; padding-bottom: 10px;">
+                    <strong><i class="bi bi-calendar-date-fill"></i></strong> 28/juin/2022 &nbsp;&nbsp;&nbsp;
+                    <strong><i class="bi bi-person-fill"></i></strong> wcontayon</strong> &nbsp;&nbsp;&nbsp;<br />
+                    <strong><i class="bi bi-tags-fill"></i></strong> 
+                     |  cloud-architecture  |  azure  |  aspnetcore 
+                </div>
+                <hr />
+                
+                <p>In this serie, I&#39;ll show how we can implement a background system to export larde data from a SQL Server without freeze your aspnetcore application. This system is deployed on Azure, using Azure Queue, Azure file share, and SignalR. Let&#39;s go :sunglasses: .</p>
+<br />
+
+<h2 id="part-1--description-of-our-solution"><strong>Part 1</strong> : Description of our solution</h2>
+<p>In one of my previous project, I was facing an issue about exporting a very large data from SQL server. I found that the code froze the API backend every time with exception like <strong><code>TaskCancelledException</code></strong>, <strong><code>BadHttpExceptions</code></strong> or a <strong><code>TimeoutException</code></strong> on the <strong><code>HttpClient</code></strong>.
+However, the code was not the root cause, it&#39;s because we have a lot of rows in our database (more than 80 million rows) that need to be exported. A <strong><code>HttpClient</code></strong> call will be hanged if the SQL query takes to long to be returned (<strong><code>TimeoutException</code></strong>) or <strong><code>TaskCancelledException</code></strong>.</p>
+<p>To figure out, I&#39;ve designed a data export system on Azure, using <strong>Azure Queue</strong>, <strong>Azure file share</strong>, <strong>SignalR</strong> and AspNetCore <strong><code>IHostedService</code></strong>. Let&#39;s see how it can be accomplished !</p>
+<p>Here is the design of our solution</p>
+<img src="..\assets\articles\img\azure-export-system-design.png" style="width:100%" />
+
+<p>Let&#39;s describe our solution and the components</p>
+<ul>
+<li><strong>Azure Queue Storage</strong> is a service for storing large numbers of messages. We can access messages from via authenticated calls with <strong><code>HTTP</code></strong> and <strong><code>HTTPS</code></strong>. A message in Azure queue can be up to <strong>64 KB</strong> in size. It&#39;s usually used to create a backlog of task to process. We&#39;ll use an <strong>Azure Queue Storage</strong> to store our data export requests to be processed.</li>
+</ul>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> You can learn more about <strong><code>Azure Queue Storage</code></strong> on <a href="https://docs.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction">Microsoft docs</a>.</p>
+</blockquote>
+<br />
+
+<ul>
+<li><strong>Azure files</strong> offers fully managed file shares in the cloud that are accessible via the industry standard Server Message Block (SMB) protocol, Network File System (NFS) protocol, and Azure Files REST API. <blockquote>
+<p><strong><em>NOTE:</em></strong> Lean more about <strong><code>Azure files share</code></strong> on <a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction">Microsoft docs</a>.</p>
+</blockquote>
+</li>
+</ul>
+<br />
+
+<ul>
+<li><strong>SignalR</strong> is a awesome .Net library to add real-time web functionality to AspNetCore applications. It takes advantage of WebSocket, an HTML5 API that enables bi-directional communication between the browser and server.
+I&#39;ll post some articles on <strong>SignalR</strong> with <strong><code>aspnetcore</code></strong>.<blockquote>
+<p><strong><em>NOTE:</em></strong> More about <a href="https://docs.microsoft.com/en-us/aspnet/signalr/overview/getting-started/introduction-to-signalr">SignalR</a></p>
+</blockquote>
+</li>
+</ul>
+<br />
+
+<h3 id="how-does-it-works">How does it works</h3>
+<ol>
+<li>An user ask for a large data to be exported from your application (or any frontend application) by send a request to our <strong><code>Backend Api</code></strong>. </li>
+<li>Our <strong><code>Backend Api</code></strong> create <strong>Export request message</strong>  and send to our <strong><code>Azure Queue</code></strong>.</li>
+<li>Our <strong><code>IHostedService</code></strong> consume the <strong>export request message</strong>, and process the export by executing a SQL Query (or any long running task to get the data to be export).</li>
+<li>Once we have the datas (very large datas ...), we create the exported file (csv, xlsx, any other file extension).</li>
+<li>We upload the created file to our <strong>Azure File Share</strong>.</li>
+<li>After the file uploaded, we can obtain the download url, and send to our SignalR service.</li>
+<li>We notify back the user with the url of the file that contains our exported data.</li>
+</ol>
+<p>To interact our <strong>Azure Queue</strong> and <strong>Azure File Share</strong>, let&#39;s define an interface that will injected in the <strong><code>Backend Api</code></strong> and in our <strong><code>IHostedService</code></strong>. 
+<br /></p>
+<p>Our <strong><code>IAzureStorageService</code></strong> will have some routine to EnQueue/DeQueue message to/from the <strong>Azure Queue</strong>, and Upload file to <strong>Azure File Share</strong>. </p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">IAzureStorageService</span>
+{
+    <span class="hljs-function">ValueTask&lt;<span class="hljs-keyword">string</span>&gt; <span class="hljs-title">UploadToFileShareAsync</span>(<span class="hljs-params">Stream streamToUpload, <span class="hljs-keyword">string</span> fileShareFolderName, <span class="hljs-keyword">string</span> fileName</span>)</span>;
+
+    <span class="hljs-function">ValueTask&lt;<span class="hljs-keyword">string</span>&gt; <span class="hljs-title">UploadToFileShareAsync</span>(<span class="hljs-params">FileInfo fileToUpload, <span class="hljs-keyword">string</span> fileShareFolderName, <span class="hljs-keyword">string</span> fileName</span>)</span>;
+
+    <span class="hljs-function">ValueTask&lt;<span class="hljs-keyword">bool</span>&gt; <span class="hljs-title">EnQueueAsync</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> message</span>)</span>;
+
+    ValueTask&lt;<span class="hljs-keyword">string</span>[]&gt; DeQueueAsync(<span class="hljs-keyword">int</span> count = <span class="hljs-number">5</span>);
+}</code></pre>
+<br />
+
+<p>In the next post, we&#39;ll implement our solution architecture. We&#39;ll go first with our <strong><code>IAzureStorageService</code></strong> and next we&#39;ll see how we can implement our background service to process the queue message with <strong><code>IHostedService</code></strong>.</p>
+<br />
+
+<hr />
+
+<h2 id="additional-links">Additional Links</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-6.0&amp;tabs=visual-studio">Background tasks with hosted services in ASP.NET Core</a></li>
+<li><a href="https://docs.microsoft.com/en-us/aspnet/signalr/overview/getting-started/introduction-to-signalr">Introduction to SignalR</a></li>
+</ul>
+
+
+                <hr style="margin:2rem 0px" />
+
+                
+                <div class="container py-4">
+                  <div class="social-links mt-3"> 
+                     <span><strong>Follow Me</strong></span>&nbsp;&nbsp;
+                     <a href="https://github.com/wcontayon/Adom.Framework" class="followme-box"><i class="bx bxl-github"></i></a> 
+                     <a href="https://www.linkedin.com/in/wcontayon/" class="followme-box"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>            </div>
+            
+            <hr />
+
+          </div>
+
+          <div class="col-lg-3 team" style="padding-top:0px;">
+            
+            <div class="member" style="background-color:#f6f9fe; border:1px solid #9db7e3; box-shadow: 0px 0px 0px;">
+                <div class="member-img">
+                 
+                </div>
+                <div class="member-info">
+                    <h3>Comlan William CONTAYON</h3> 
+                    <span>wcontayon</span>
+            
+                    <br />
+            
+                    <strong>Senior Software Engineer</strong><br />
+                    Microsoft technology enthusiast<br />
+            
+                    <div class="social-links mt-3"> 
+                        <a href="https://github.com/wcontayon/Adom.Framework" class="followme-box"><i class="bx bxl-github"></i></a> 
+                        <a href="https://www.linkedin.com/in/wcontayon/" class="followme-box"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+            
+                <hr />
+            
+                <div class="member-info">
+                    <h5>Recents Posts</h5>
+                       <a class="question" href="/blog/rate-limiting-annoucement-in-.net7-preview" style="text-decoration:underline;">Rate Limiting annoucement in .Net7 preview</a><br />
+                       <a class="question" href="/blog/data-export-system-with-azure-and-signalr-part-2" style="text-decoration:underline;">Data export system with Azure and SignalR - Part 2</a><br />
+                       <a class="question" href="/blog/data-export-system-with-azure-and-signalr-part-1" style="text-decoration:underline;">Data export system with Azure and SignalR - Part 1</a><br />
+                </div>
+            
+                <hr />
+            
+                <div class="member-info">
+                    <h5>Related Blogs</h5>
+                    <a class="question" href="https://devblogs.microsoft.com" style="text-decoration:underline;">Dev Microsoft Blog</a><br />
+                </div>
+            </div>          </div>
+
+        </div>
+
+      </div>
+        
+    </section>
+    
+  </main><!-- End #main -->
+
+   <!-- ======= Footer ======= -->
+   <footer id="footer">
+  
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Adom</span></strong>. All Rights Reserved. Built with <a href="">metalsmith</a>
+        </div>
+        <div class="credits" style="font-size:16px;">
+          <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+  
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/purecounter/purecounter.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+  
+  </body>
+  </html>

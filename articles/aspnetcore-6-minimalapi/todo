@@ -1,0 +1,30 @@
+[] Indroducing Minimal-API
+    - What is Minimal API ?
+    - Origin of Minimal API
+    - Comparison Minimal API vs MVC Api
+    - Pros and Cons of Minimal API
+    - More Information about It
+[] Write your first Minimal API project
+    - Understanding the low ceremonie 
+    - Write hello minimal API
+[] Middleware and Dependancy Injection in Minimal API
+    - Middleware
+    - Write your ownn Middleware in your Minimal API
+    - Dependency Injection
+[] Model Binding in Minimal Api
+[] Routing in Minimal API
+[] Response Minimal API
+    - IResult in Minimal API
+    - Custom IResult
+    - TypedResult in Minimal API
+[] Integrate OpenApi in Minimal API
+[] Write a CRUD minimal API with Entity Framework
+    - Building Minimal API endpoint from EFCore DbContext
+    - Map api from CRUD class
+[] Security in Minimal API project (Authentication & Authorization)
+    - Authentication
+        - Implementing Basic Authentication
+        - Impemmenting Token Authentication with JWT
+    - Autorization
+[] Unit test your Minimal API
+[] Deploy your Minimal API

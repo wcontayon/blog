@@ -1,0 +1,347 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ 
+   <title> Custom implementation IResult – Minimal API -  Adom</title>
+   <meta content="" name="description">
+   <meta content="" name="keywords">
+   <meta name="description" content=" Custom implementation IResult – Minimal API " />
+ 
+   <!-- Favicons -->
+   <link href="../favicon/favicon.ico" rel="icon">
+   <link href="../favicon/apple-touch-icon.png" rel="apple-touch-icon">
+ 
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
+   <!-- Vendor CSS Files -->
+   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+   <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark.css">
+ 
+   <!-- Template Main CSS File -->
+   <link href="../assets/css/style.css" rel="stylesheet">
+ 
+   <!-- =======================================================
+   * Template Name: BizLand - v3.7.0
+   * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+   * Author: BootstrapMade.com
+   * License: https://bootstrapmade.com/license/
+   ======================================================== -->
+ 
+   <style>
+     .followme-box{
+       font-size: 18px;
+       display: inline-block;
+       background: #106eea;
+       color: #fff;
+       line-height: 1;
+       padding: 8px 0;
+       margin-right: 4px;
+       border-radius: 4px;
+       text-align: center;
+       width: 36px;
+       height: 36px;
+       transition: 0.3s;
+     }
+   </style>
+   
+ </head>
+ 
+ <body>
+ 
+     <!-- ======= Top Bar ======= -->
+   <section id="topbar" class="d-flex align-items-center">
+     <div class="container d-flex justify-content-center justify-content-md-between">
+       <div class="contact-info d-flex align-items-center">
+         <!-- <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"> -->
+         <strong><span style="font-size:17px;">Adom</span></strong>&nbsp;&nbsp; Blog about Microsoft technologies (.NET, .NET Core, ASP.NET Core, Azure, etc.)</a></i>
+         <!-- <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i> -->
+       </div>
+       <div class="social-links d-none d-md-flex align-items-center">
+         <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bi bi-github"></i></a>
+         <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+       </div>
+     </div>
+   </section>
+ 
+   <!-- ======= Header ======= -->
+   <header id="header" class="d-flex align-items-center">
+     <div class="container d-flex align-items-center justify-content-between">
+ 
+       <!-- <h1 class="logo"><a href="index.html">Adom<span>.</span></a></h1> -->
+       <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="/" class="logo"><img src="../assets/img/Adom.png" alt=""></a>
+ 
+       <nav id="navbar" class="navbar">
+         <ul>
+           <li><a class="nav-link" href="/blog/">Home</a></li>
+           <li><a class="nav-link" href="/blog/about-me">About</a></li>
+           <li><a class="nav-link" href="/blog/contact">Contact</a></li>
+         </ul>
+         <i class="bi bi-list mobile-nav-toggle"></i>
+       </nav><!-- .navbar -->
+ 
+     </div>
+   </header><!-- End Header -->
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 style="font-size: 2rem; font-weight:bold;">Custom implementation IResult – Minimal API</h2>
+          <ol>
+            <li><a href="/blog/">Home</a></li>
+            <li>Custom implementation IResult – Minimal API</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-9">
+            <div class="portfolio-description" style="border: 1px solid #e2eefd; background-color:#fff; box-shadow: 0px 0 30px rgb(34 34 34 / 8%); padding:20px;">
+                <div class="portfolio-info" style="font-size: 16px; padding-top: 10px; padding-bottom: 10px;">
+                    <strong><i class="bi bi-calendar-date-fill"></i></strong> 11/juin/2022 &nbsp;&nbsp;&nbsp;
+                    <strong><i class="bi bi-person-fill"></i></strong> wcontayon</strong> &nbsp;&nbsp;&nbsp;<br />
+                    <strong><i class="bi bi-tags-fill"></i></strong> 
+                     |  general  |  dotnet  |  aspnetcore 
+                </div>
+                <hr />
+                
+                <p>In this article, we will understand the implementation of IResult for custom response in minimal API (.NET6).</p>
+<p><strong>Minimal API</strong> is the new concept introduced by the AspNetCore team with .NET6. It allows you to setup your API with low dependancies and with a minimal ceremony.</p>
+<p>The traditional Asp.Net Core application templates are perfect for backend applications, and it has proved his performance over the years. However, to architect microservices and cloud-native applications quickly, those templates can be a little too complex and this is where Minimal APIs becomes usefull.
+IResult Interface</p>
+<p><strong>Minimal APIs</strong> introduce the IResult interface, to take control/ customize thes responses by implementing it.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Here is the defintion of the <a href="https://github.com/dotnet/aspnetcore/blob/main/src/Http/Http.Abstractions/src/HttpResults/IResult.cs">IResult</a> (some comment are mine)</p>
+</blockquote>
+<pre><code class="hljs csharp"><span class="hljs-comment">// Licensed to the .NET Foundation under one or more agreements. </span>
+<span class="hljs-comment">// The .NET Foundation licenses this file to you under the MIT license. </span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Microsoft.AspNetCore.Http</span>; 
+
+<span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span> </span>
+<span class="hljs-comment"><span class="hljs-doctag">///</span> Defines a contract that represents the result of an HTTP endpoint. </span>
+<span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span> </span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">IResult</span> 
+{ 
+  <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span> </span>
+  <span class="hljs-comment"><span class="hljs-doctag">///</span> Write an HTTP response reflecting the result. </span>
+  <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span>
+  <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="httpContext"&gt;</span>The <span class="hljs-doctag">&lt;see cref="HttpContext"/&gt;</span> for the current request.<span class="hljs-doctag">&lt;/param&gt;</span> </span>
+  <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;returns&gt;</span>A task that represents the asynchronous execute operation.<span class="hljs-doctag">&lt;/returns&gt;</span> </span>
+  <span class="hljs-function">Task <span class="hljs-title">ExecuteAsync</span>(<span class="hljs-params">HttpContext httpContext</span>)</span>; <span class="hljs-comment">// Your custom response treatement will be in this method (wco) </span>
+}</code></pre>
+
+<p>The idea behind minimal APIs where based on performance as a primary goal, and as such they are less than MVC framework). One such use case is that by default, minimal APIs only return JSON.</p>
+<p>To explore this let’s take an example. Considering the following code:</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">using</span> System.Xml.Serialization; 
+<span class="hljs-keyword">using</span> Microsoft.IO;
+
+<span class="hljs-keyword">var</span> builder = WebApplication.CreateBuilder(args);
+<span class="hljs-keyword">var</span> app = builder.Build();
+
+app.MapGet(<span class="hljs-string">"/"</span>, () =&gt; <span class="hljs-keyword">new</span> Expert { FirstName = <span class="hljs-string">"Comlan William"</span>, LastName = <span class="hljs-string">"CONTAYON"</span>, }); 
+
+app.Run(); 
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Expert</span>
+{ 
+   <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span>? FirstName { <span class="hljs-keyword">get</span>; init; } 
+   <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span>? LastName { <span class="hljs-keyword">get</span>; init; } 
+}</code></pre>
+
+<p>When we execute the api, the result is ISON serialized</p>
+<pre><code class="hljs json">{<span class="hljs-attr">"firstName"</span>:<span class="hljs-string">"Andrew"</span>,<span class="hljs-attr">"lastName"</span>:<span class="hljs-string">"Lock"</span>}</code></pre>
+
+<p>To return a custom formatted response instead of JSON (let’s say an XML formatted response), we need to implement a custom IResult class.</p>
+<p>Following are the code of our custom IResult</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> this exemple is inspired from <a href="https://andrewlock.net/returning-xml-from-minimal-apis-in-dotnet-6/">here (andrew lock blog)</a></p>
+</blockquote>
+<pre><code class="hljs csharp">using using System.Xml.Serialization;
+
+public class XmlResult&lt;T&gt; : IResult
+{
+    // Create the serializer that will actually perform the XML serialization
+    private static readonly XmlSerializer Serializer = new(typeof(T));
+
+    // The object to serialize
+    private readonly T _result;
+
+    public XmlResult(T result)
+    {
+        _result = result;
+    }
+
+    public async Task ExecuteAsync(HttpContext httpContext)
+    {
+        using var ms = new MemoryStream();
+
+        // Serialize the object synchronously then rewind the stream
+        Serializer.Serialize(ms, _result);
+        ms.Position = 0;
+
+        httpContext.Response.ContentType = "application/xml";
+        await ms.CopyToAsync(httpContext.Response.Body);
+    }
+}</code></pre>
+
+<p><strong><code>The XmlResult&lt;T&gt;</code></strong> type implements <strong><code>IResult</code></strong>, which requires the <strong><code>ExecuteAsync</code></strong> method. In this method it uses an <strong><code>XmlSerializer</code></strong> to serialize the provided object to XML to a <strong><code>MemoryStream</code></strong> and then copies this to the response Body.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> We cannot serialize directly to the Body stream, as that would be a synchronous operation, which is disallowed by default for performance reasons.</p>
+</blockquote>
+<p>To use our new result type, create an instance of it in your API. For example:</p>
+<pre><code class="hljs csharp">app.MapGet(<span class="hljs-string">"/"</span>, () =&gt; <span class="hljs-keyword">new</span> XmlResult&lt;Person&gt;(<span class="hljs-keyword">new</span> Person
+{
+    FirstName = <span class="hljs-string">"Comlan William"</span>,
+    LastName = <span class="hljs-string">"CONTAYON"</span>,
+}));</code></pre>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="hljs-attr">xmlns:xsd</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">FirstName</span>&gt;</span>Comlan William<span class="hljs-tag">&lt;/<span class="hljs-name">FirstName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">LastName</span>&gt;</span>CONTAYON<span class="hljs-tag">&lt;/<span class="hljs-name">LastName</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Person</span>&gt;</span></code></pre>
+<p>Registering our custom <strong><code>XmlResult</code></strong> with <strong><code>IResultExtensions</code></strong></p>
+<p><strong>Minimal APIs</strong> typically use the IResult objects exposed on the static Results type. You can return a <strong>404</strong> response using <strong><code>Results.NotFound()</code></strong> or a <strong>201</strong> response using <strong><code>Results.Created()</code></strong> for example. These are analogous to the <strong><code>NotFound()</code></strong> and <strong><code>Created()</code></strong> methods available on ControllerBase in WebAPIs.</p>
+<p>To make it easier to add custom result types, the static Results type includes a property called Extensions:</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">partial</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Results</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> IResultExtensions Extensions { <span class="hljs-keyword">get</span>; } = <span class="hljs-keyword">new</span> ResultExtensions();
+    <span class="hljs-comment">// ...</span>
+}</code></pre>
+
+<p>This property is of type <strong><code>IResultExtensions</code></strong> which is just an empty marker interface:</p>
+<pre><code class="hljs csharp"><span class="hljs-keyword">namespace</span> <span class="hljs-title">Microsoft.AspNetCore.Http</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">IResultExtensions</span> { }
+
+We can’t <span class="hljs-keyword">add</span> methods to the Results type because it’s <span class="hljs-keyword">static</span>, but we can <span class="hljs-keyword">add</span> them to the IResultExtensions marker <span class="hljs-keyword">interface</span>, <span class="hljs-title">like</span> <span class="hljs-title">the</span> <span class="hljs-title">following</span> <span class="hljs-title">code</span>:
+
+<span class="hljs-title">static</span> <span class="hljs-title">class</span> <span class="hljs-title">XmlResultExtensions</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> IResult Xml&lt;T&gt;(<span class="hljs-keyword">this</span> IResultExtensions extensions, T result) =&gt; <span class="hljs-keyword">new</span> XmlResult&lt;T&gt;()
+}</code></pre>
+
+<p>With this extension method we avoid having to explicitly specify the generic type parameter as Expert and we know where to look for the available custom <strong><code>IResult</code></strong> types (they’ll all be on <strong><code>Results.Extensions</code></strong>):</p>
+<p>so our final XML API looks like the following:</p>
+<pre><code class="hljs csharp">app.MapGet(<span class="hljs-string">"/"</span>, () =&gt; Results.Extensions.Xml(<span class="hljs-keyword">new</span> Expert
+{
+    FirstName = <span class="hljs-string">"Comlan William"</span>,
+    LastName = <span class="hljs-string">"CONTAYON"</span>,
+}));</code></pre>
+
+<h3 id="summary">Summary</h3>
+<p>In this post I showed how you could return create a custom from a minimal API by creating a custom IResult type called <strong><code>XmlResult&lt;T&gt;</code></strong>. Then we created an extension method so that the result is exposed as <strong><code>Results.Extensions.Xml()</code></strong>. </p>
+
+
+                <hr style="margin:2rem 0px" />
+
+                
+                <div class="container py-4">
+                  <div class="social-links mt-3"> 
+                     <span><strong>Follow Me</strong></span>&nbsp;&nbsp;
+                     <a href="https://github.com/wcontayon/Adom.Framework" class="followme-box"><i class="bx bxl-github"></i></a> 
+                     <a href="https://www.linkedin.com/in/wcontayon/" class="followme-box"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>            </div>
+            
+            <hr />
+
+          </div>
+
+          <div class="col-lg-3 team" style="padding-top:0px;">
+            
+            <div class="member" style="background-color:#f6f9fe; border:1px solid #9db7e3; box-shadow: 0px 0px 0px;">
+                <div class="member-img">
+                 
+                </div>
+                <div class="member-info">
+                    <h3>Comlan William CONTAYON</h3> 
+                    <span>wcontayon</span>
+            
+                    <br />
+            
+                    <strong>Senior Software Engineer</strong><br />
+                    Microsoft technology enthusiast<br />
+            
+                    <div class="social-links mt-3"> 
+                        <a href="https://github.com/wcontayon/Adom.Framework" class="followme-box"><i class="bx bxl-github"></i></a> 
+                        <a href="https://www.linkedin.com/in/wcontayon/" class="followme-box"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+            
+                <hr />
+            
+                <div class="member-info">
+                    <h5>Recents Posts</h5>
+                       <a class="question" href="/blog/rate-limiting-annoucement-in-.net7-preview" style="text-decoration:underline;">Rate Limiting annoucement in .Net7 preview</a><br />
+                       <a class="question" href="/blog/data-export-system-with-azure-and-signalr-part-2" style="text-decoration:underline;">Data export system with Azure and SignalR - Part 2</a><br />
+                       <a class="question" href="/blog/data-export-system-with-azure-and-signalr-part-1" style="text-decoration:underline;">Data export system with Azure and SignalR - Part 1</a><br />
+                </div>
+            
+                <hr />
+            
+                <div class="member-info">
+                    <h5>Related Blogs</h5>
+                    <a class="question" href="https://devblogs.microsoft.com" style="text-decoration:underline;">Dev Microsoft Blog</a><br />
+                </div>
+            </div>          </div>
+
+        </div>
+
+      </div>
+        
+    </section>
+    
+  </main><!-- End #main -->
+
+   <!-- ======= Footer ======= -->
+   <footer id="footer">
+  
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Adom</span></strong>. All Rights Reserved. Built with <a href="">metalsmith</a>
+        </div>
+        <div class="credits" style="font-size:16px;">
+          <a href="https://github.com/wcontayon/Adom.Framework" class="twitter"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/wcontayon/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+  
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/purecounter/purecounter.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+  
+  </body>
+  </html>
